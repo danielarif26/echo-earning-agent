@@ -1,11 +1,11 @@
 {
-  "ts": "2026-09-13T21:59:49.887410Z",
+  "ts": "2026-09-13T22:01:23.050993Z",
   "mode": "autonomous-earn-spend",
   "engine": "claude2 / FreeLLMAPI",
-  "state": "error",
-  "activity": "Worker run failed (exit 1); launchd will retry automatically",
+  "state": "running",
+  "activity": "Scanning earning rails; earned-wallet spending is enabled",
   "wallet": {
-    "ts": "2026-09-13T21:59:49.768552Z",
+    "ts": "2026-09-13T22:01:22.980793Z",
     "spending_enabled": true,
     "provider": "AgentCash",
     "base_address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37",
