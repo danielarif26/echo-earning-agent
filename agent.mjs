@@ -136,11 +136,19 @@ async function baseIncomingTransfers(previousToBlock) {
       if (log?.removed) continue
       const value = Number(BigInt(log.data || '0x0')) / 1e6
       amount += value
+      const tokenFrom = `0x${String(log.topics?.[1] || '').slice(-40)}`
+      let tokenFromType = 'unknown'
+      if (validEvmAddress(tokenFrom)) {
+        const code = await baseRpc('eth_getCode', [tokenFrom, 'latest'])
+        if (!code.error) tokenFromType = code.result === '0x' ? 'EOA' : 'contract'
+      }
       events.push({
         tx: log.transactionHash,
         logIndex: Number(BigInt(log.logIndex || '0x0')),
         block: Number(BigInt(log.blockNumber || '0x0')),
         amount: value,
+        tokenFrom,
+        tokenFromType,
       })
     }
     lastScanned = chunkEnd
@@ -298,6 +306,12 @@ const solDelta = solNow != null && solPrev != null ? solNow - solPrev : 0
 const baseIncoming = moneyValue(baseTransfers) ?? 0
 const historicalBaseIncoming = history.reduce((sum, snap) => sum + (moneyValue(snap?.baseTransfers) ?? 0), 0)
 const baseObservedTotal = historicalBaseIncoming + baseIncoming
+const receiptMap = new Map()
+for (const snap of history) {
+  for (const event of snap?.baseTransfers?.events || []) receiptMap.set(`${event.tx}:${event.logIndex}`, event)
+}
+for (const event of baseTransfers.events || []) receiptMap.set(`${event.tx}:${event.logIndex}`, event)
+const recentBaseReceipts = [...receiptMap.values()].sort((a, b) => (b.block || 0) - (a.block || 0)).slice(0, 20)
 
 let seen = []
 try {
@@ -317,6 +331,7 @@ const snapshot = {
   base,
   baseTransfers,
   baseObservedTotal,
+  recentBaseReceipts,
   solana,
   baseDelta,
   solUsdcDelta,
@@ -355,7 +370,7 @@ const md = `# Penniless Agent status
 
 _Last run: ${now} (UTC), via ${runContext}._
 
-## Verified money — receive-only wallets
+## On-chain receiver status
 - **Base USDC**${EVM_WALLET ? ` \`${EVM_WALLET}\`` : ''}: **${renderBase}**${baseDelta > 0 ? ` · +${baseDelta.toFixed(6)} received since last run` : ''}
 - **Solana**${SOL_WALLET ? ` \`${SOL_WALLET}\`` : ''}: **${renderSol}**${solUsdcDelta > 0 ? ` · +${solUsdcDelta.toFixed(6)} USDC received` : ''}${solDelta > 0 ? ` · +${solDelta.toFixed(9)} SOL received` : ''}
 
@@ -364,7 +379,7 @@ _Last run: ${now} (UTC), via ${runContext}._
 - **USDC received in newly scanned Base transfer events:** **${baseTransfers.error ? `scan error: ${baseTransfers.error}` : `${baseIncoming} USDC`}**
 - **Total incoming Base USDC observed since this watcher began tracking transfer events:** **${baseObservedTotal} USDC**
 
-Incoming USDC transfer events are tracked separately from the current address balance, so a custodial exchange sweep cannot erase the receipt record. A merged PR or bounty marked payable is not the same as money received.
+Incoming USDC transfer events are tracked separately from the current address balance, so a custodial exchange sweep cannot erase the on-chain receipt record. Because this is a Binance deposit address, an on-chain transfer observation is not the same as confirmation that Binance credited the account. A merged PR or bounty marked payable is also not money received.
 
 ## Open agent listings — Superteam
 ${listingLines}
@@ -386,11 +401,13 @@ if (paymentReceived) {
   else if (baseDelta > 0) parts.push(`+${baseDelta.toFixed(6)} Base USDC balance increase`)
   if (solUsdcDelta > 0) parts.push(`+${solUsdcDelta.toFixed(6)} Solana USDC`)
   if (solDelta > 0) parts.push(`+${solDelta.toFixed(9)} SOL`)
-  writeFileSync(NOTIFY, `PAYMENT RECEIVED (${now}): ${parts.join(' · ')}\n`)
+  const contractOrigin = (baseTransfers.events || []).some((e) => e.tokenFromType === 'contract')
+  const creditNote = baseIncoming > 0 ? (contractOrigin ? ' · contract-origin transfer: verify Binance credited it' : ' · verify Binance credited it') : ''
+  writeFileSync(NOTIFY, `USDC TRANSFER OBSERVED (${now}): ${parts.join(' · ')}${creditNote}\n`)
 } else {
   try { unlinkSync(NOTIFY) } catch {}
 }
 
 console.log('status:', JSON.stringify(snapshot))
-if (paymentReceived) console.log('::notice title=PAYMENT RECEIVED::receive-only wallet balance increased')
+if (paymentReceived) console.log('::notice title=USDC TRANSFER OBSERVED::check receiver status and Binance credit')
 if (newListings.length) console.log(`::notice title=NEW LISTINGS::${newListings.join(' | ')}`)

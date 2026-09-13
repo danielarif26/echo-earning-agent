@@ -47,7 +47,7 @@ jobs:
         if: always()
         run: |
           if [ -f NOTIFY.txt ]; then
-            echo "::error title=PAYMENT RECEIVED::$(cat NOTIFY.txt)"
+            echo "::error title=USDC TRANSFER OBSERVED::$(cat NOTIFY.txt)"
             exit 1
           fi
           echo "no verified payment event this run"
