@@ -35,8 +35,10 @@ jobs:
         run: |
           git config user.name "penniless-agent-watcher"
           git config user.email "${{ github.repository_owner_id }}+${{ github.repository_owner }}@users.noreply.github.com"
-          git add status.md history.jsonl seen-listings.json NOTIFY.txt 2>/dev/null || true
-          git add -u
+          git add status.md history.jsonl seen-listings.json
+          if [ -f NOTIFY.txt ] || git ls-files --error-unmatch NOTIFY.txt >/dev/null 2>&1; then
+            git add -A -- NOTIFY.txt
+          fi
           git diff --staged --quiet || git commit -m "status @ $(date -u +%FT%TZ)"
           git push
 

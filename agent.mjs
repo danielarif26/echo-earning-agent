@@ -27,25 +27,38 @@ function validEvmAddress(v) {
 async function baseUsdc() {
   if (!EVM_WALLET) return skipped('no EVM_WALLET repository variable')
   if (!validEvmAddress(EVM_WALLET)) return { error: 'invalid EVM_WALLET format' }
-  try {
-    const r = await fetch('https://mainnet.base.org', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        jsonrpc: '2.0', id: 1, method: 'eth_call',
-        params: [{
-          to: BASE_USDC,
-          data: '0x70a08231000000000000000000000000' + EVM_WALLET.slice(2),
-        }, 'latest'],
-      }),
-      signal: AbortSignal.timeout(15000),
-    })
-    const j = await r.json()
-    if (!j?.result) return { error: j?.error?.message || 'RPC returned no result' }
-    return { amount: Number(BigInt(j.result)) / 1e6 }
-  } catch (e) {
-    return { error: e.message }
+
+  const rpcUrls = ['https://mainnet.base.org', 'https://base-rpc.publicnode.com']
+  let lastError = 'all Base RPCs failed'
+  for (const rpc of rpcUrls) {
+    try {
+      const r = await fetch(rpc, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          jsonrpc: '2.0', id: 1, method: 'eth_call',
+          params: [{
+            to: BASE_USDC,
+            data: '0x70a08231000000000000000000000000' + EVM_WALLET.slice(2),
+          }, 'latest'],
+        }),
+        signal: AbortSignal.timeout(15000),
+      })
+      if (!r.ok) {
+        lastError = `${rpc} HTTP ${r.status}`
+        continue
+      }
+      const j = await r.json()
+      if (!j?.result) {
+        lastError = j?.error?.message || `${rpc} returned no result`
+        continue
+      }
+      return { amount: Number(BigInt(j.result)) / 1e6 }
+    } catch (e) {
+      lastError = e.message
+    }
   }
+  return { error: lastError }
 }
 
 async function solanaBalances() {
