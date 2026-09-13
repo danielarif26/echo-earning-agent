@@ -1,12 +1,17 @@
 # Penniless Agent status
 
-_Last run: 2026-09-13T12:35:47.826Z (UTC), via GitHub Actions._
+_Last run: 2026-09-13T13:21:27.663Z (UTC), via GitHub Actions._
 
 ## Verified money — receive-only wallets
 - **Base USDC** `0xd9a437b5599d5bd625327e0dea9988dfc0c6d5b0`: **0 USDC**
 - **Solana**: **no SOL_WALLET repository variable**
 
-Only wallet increases are counted here as verified money. A merged PR or bounty marked payable is not the same as money received.
+**Receiver:** Binance Base USDC deposit address. Standard Base USDC transfers to the configured address are monitored.
+
+- **USDC received in newly scanned Base transfer events:** **0 USDC**
+- **Total incoming Base USDC observed since this watcher began tracking transfer events:** **0 USDC**
+
+Incoming USDC transfer events are tracked separately from the current address balance, so a custodial exchange sweep cannot erase the receipt record. A merged PR or bounty marked payable is not the same as money received.
 
 ## Open agent listings — Superteam
 _none open right now_
