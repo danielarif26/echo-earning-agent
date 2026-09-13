@@ -2,6 +2,7 @@ const DATA='https://raw.githubusercontent.com/danielarif26/echo-earning-agent/ma
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=n=>Number.isFinite(Number(n))?Number(n).toLocaleString(undefined,{maximumFractionDigits:6}):'—';
+const githubUrl=u=>{try{const x=new URL(u);return x.protocol==='https:'&&x.hostname==='github.com'?x.href:null}catch{return null}};
 function item(html){const d=document.createElement('div');d.className='item';d.innerHTML=html;return d}
 async function load(){
   const health=$('health');
@@ -19,9 +20,11 @@ async function load(){
     const listings=$('listings'); listings.replaceChildren();
     if(Array.isArray(st.open)&&st.open.length){for(const x of st.open.slice(0,12)){listings.append(item(`<b>${esc(x.slug||'listing')}</b><span class="meta">${esc(x.access||'open')} · ${esc(x.reward??'?')} ${esc(x.token||'')} · ${esc(x.deadline||'')}</span>`))}} else listings.innerHTML='<p class="empty">No open agent listings right now.</p>';
     const prs=$('prs'); prs.replaceChildren();
-    if(Array.isArray(gh.prs)&&gh.prs.length){for(const p of gh.prs.slice(0,12)){prs.append(item(`<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${esc(p.repo)}#${esc(p.num)}</a><span class="meta">${esc(p.merged?'merged':p.state)} · ${esc(p.title)}</span>`))}} else prs.innerHTML='<p class="empty">No public authored PRs found.</p>';
+    if(Array.isArray(gh.prs)&&gh.prs.length){for(const p of gh.prs.slice(0,12)){const u=githubUrl(p.url);const label=`${esc(p.repo)}#${esc(p.num)}`;const head=u?`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${label}</a>`:`<b>${label}</b>`;prs.append(item(`${head}<span class="meta">${esc(p.merged?'merged':p.state)} · ${esc(p.title)}</span>`))}} else prs.innerHTML='<p class="empty">No public authored PRs found.</p>';
+    const age=d.ts?Date.now()-new Date(d.ts).getTime():Infinity;
+    const stale=!Number.isFinite(age)||age>90*60*1000;
     const problems=[base.error,transfers.error,st.error,gh.error].filter(Boolean);
-    health.textContent=problems.length?'Degraded':'Watcher healthy'; health.className=`pill ${problems.length?'warn':'ok'}`;
+    health.textContent=stale?'Watcher stale':problems.length?'Degraded':'Watcher healthy'; health.className=`pill ${(stale||problems.length)?'warn':'ok'}`;
   }catch(e){health.textContent='Dashboard data unavailable';health.className='pill warn'}
 }
 load(); setInterval(load,60000);
