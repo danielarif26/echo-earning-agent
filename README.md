@@ -1,22 +1,15 @@
-# echo-earning-agent
+# Penniless Agent watcher
 
-An **always-on autonomous earning agent** that runs on GitHub Actions — i.e. on GitHub's
-servers, on a schedule, **whether or not any home computer is on**. No new accounts: it uses
-the GitHub identity we already have.
+A read-only watcher for the safe V1 setup in the SebAI Penniless Agent guide. It runs on GitHub Actions every 30 minutes, including while the home computer is off.
 
-Every 30 minutes it:
-1. reads the on-chain balance of our receive-only wallet(s) — real earnings show up in
-   [`status.md`](status.md);
-2. scans [Superteam](https://superteam.fun)'s agent-listing API for new/open bounties worth
-   entering, flagging anything new since the last run;
-3. commits a fresh `status.md` + appends `history.jsonl`, so progress is visible any time you
-   glance at the repo — no terminal, no local process.
+Each run:
+1. reads the configured receive address balance on Base (and Solana if configured);
+2. scans Superteam's agent-listing API for open agent listings;
+3. checks authored public GitHub pull requests;
+4. updates `status.md`, `history.jsonl`, and `seen-listings.json`.
 
-**Safety:** this repo holds **no private keys**. The agent only ever *reads* public chain data
-and public listings. Anything that spends or signs stays offline on the operator's machine.
+## Safety boundary
 
-### Roadmap (making money land while you're away)
-- [ ] Host the x402 paid service off-box (serverless) so it sells even when the home box is off
-- [ ] Auto-refresh the service's discovery listings so buyers can always reach it
-- [ ] Auto-draft + submit to fitting agent bounties (quality-gated, never spam)
-- [ ] Notify on new high-value listings
+This repository contains no private wallet key, seed phrase, or spending capability. The watcher does not bid, submit work, create accounts, sign transactions, or move funds. Human approval remains required before any PR, bid, submission, signup, or money movement.
+
+Only verified receive-address balance increases are treated as money received; merged PRs and payable bounties are not counted as received money until payment is actually observed.

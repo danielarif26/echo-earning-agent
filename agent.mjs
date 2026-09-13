@@ -12,6 +12,7 @@
 import { appendFileSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'
 
 const now = new Date().toISOString()
+const runContext = process.env.GITHUB_ACTIONS === 'true' ? 'GitHub Actions' : 'local/manual run'
 const EVM_WALLET = (process.env.EVM_WALLET || '').trim()
 const SOL_WALLET = (process.env.SOL_WALLET || '').trim()
 const GITHUB_LOGIN = (process.env.GITHUB_LOGIN || '').trim()
@@ -123,7 +124,7 @@ async function superteamLive() {
 async function githubPrs() {
   if (!GITHUB_LOGIN) return skipped('no GitHub login supplied by workflow')
   try {
-    const q = encodeURIComponent(`author:${GITHUB_LOGIN} type:pr`)
+    const q = encodeURIComponent(`author:${GITHUB_LOGIN} type:pr is:public`)
     const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'penniless-agent-watcher' }
     if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
     const r = await fetch(`https://api.github.com/search/issues?q=${q}&sort=updated&order=desc&per_page=30`, {
@@ -147,39 +148,56 @@ async function githubPrs() {
   }
 }
 
-function lastSnapshot() {
+function historySnapshots() {
   try {
-    const lines = readFileSync(new URL('./history.jsonl', import.meta.url), 'utf8').trim().split('\n')
-    if (!lines.length || !lines.at(-1)) return null
-    return JSON.parse(lines.at(-1))
+    const lines = readFileSync(new URL('./history.jsonl', import.meta.url), 'utf8')
+      .split('\n')
+      .filter(Boolean)
+    const snapshots = []
+    for (const line of lines) {
+      try { snapshots.push(JSON.parse(line)) } catch {}
+    }
+    return snapshots
   } catch {
-    return null
+    return []
   }
 }
 
 function moneyValue(obj, key = 'amount') {
-  return typeof obj?.[key] === 'number' ? obj[key] : null
+  const value = obj?.[key]
+  return typeof value === 'number' && Number.isFinite(value) ? value : null
+}
+
+function latestNumeric(history, getter) {
+  for (let i = history.length - 1; i >= 0; i -= 1) {
+    const value = getter(history[i])
+    if (typeof value === 'number' && Number.isFinite(value)) return value
+  }
+  return null
 }
 
 const base = await baseUsdc()
 const solana = await solanaBalances()
 const superteam = await superteamLive()
 const github = await githubPrs()
-const prev = lastSnapshot()
+const history = historySnapshots()
 
 const baseNow = moneyValue(base)
-const basePrev = moneyValue(prev?.base)
+const basePrev = latestNumeric(history, (s) => moneyValue(s?.base))
 const solUsdcNow = moneyValue(solana, 'usdc')
-const solUsdcPrev = moneyValue(prev?.solana, 'usdc')
+const solUsdcPrev = latestNumeric(history, (s) => moneyValue(s?.solana, 'usdc'))
 const solNow = moneyValue(solana, 'sol')
-const solPrev = moneyValue(prev?.solana, 'sol')
+const solPrev = latestNumeric(history, (s) => moneyValue(s?.solana, 'sol'))
 
 const baseDelta = baseNow != null && basePrev != null ? baseNow - basePrev : 0
 const solUsdcDelta = solUsdcNow != null && solUsdcPrev != null ? solUsdcNow - solUsdcPrev : 0
 const solDelta = solNow != null && solPrev != null ? solNow - solPrev : 0
 
 let seen = []
-try { seen = JSON.parse(readFileSync(new URL('./seen-listings.json', import.meta.url), 'utf8')) } catch {}
+try {
+  const parsed = JSON.parse(readFileSync(new URL('./seen-listings.json', import.meta.url), 'utf8'))
+  if (Array.isArray(parsed)) seen = parsed
+} catch {}
 const openSlugs = (superteam.open || []).map((o) => o.slug).filter(Boolean)
 const newListings = openSlugs.filter((s) => !seen.includes(s))
 writeFileSync(
@@ -225,7 +243,7 @@ const prLines = github.skipped
 
 const md = `# Penniless Agent status
 
-_Last run: ${now} (UTC), on GitHub Actions._
+_Last run: ${now} (UTC), via ${runContext}._
 
 ## Verified money — receive-only wallets
 - **Base USDC**${EVM_WALLET ? ` \`${EVM_WALLET}\`` : ''}: **${renderBase}**${baseDelta > 0 ? ` · +${baseDelta.toFixed(6)} received since last run` : ''}
