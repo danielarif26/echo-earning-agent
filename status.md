@@ -1,9 +1,9 @@
 # Penniless Agent status
 
-_Last run: 2026-09-13T11:49:42.354Z (UTC), on GitHub Actions._
+_Last run: 2026-09-13T12:17:18.427Z (UTC), on GitHub Actions._
 
 ## Verified money — receive-only wallets
-- **Base USDC**: **no EVM_WALLET repository variable**
+- **Base USDC** `0xd9a437b5599d5bd625327e0dea9988dfc0c6d5b0`: **0 USDC**
 - **Solana**: **no SOL_WALLET repository variable**
 
 Only wallet increases are counted here as verified money. A merged PR or bounty marked payable is not the same as money received.
