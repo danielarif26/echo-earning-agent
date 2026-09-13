@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://raw.githubusercontent.com; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; frame-ancestors 'none'">
+  <title>Penniless Agent</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">PENNILESS AGENT</p>
+        <h1>Live earning watcher</h1>
+        <p class="sub">Read-only status. No private keys, no spending, no automatic submissions.</p>
+      </div>
+      <div id="health" class="pill">Loading…</div>
+    </header>
+
+    <section class="grid metrics">
+      <article class="card"><span>Current Base USDC balance</span><strong id="balance">—</strong></article>
+      <article class="card"><span>Observed incoming USDC</span><strong id="received">—</strong></article>
+      <article class="card"><span>Open Superteam listings</span><strong id="listing-count">—</strong></article>
+      <article class="card"><span>Public PRs tracked</span><strong id="pr-count">—</strong></article>
+    </section>
+
+    <section class="card receiver">
+      <div><span>Receive address</span><strong id="receiver-label">—</strong></div>
+      <code id="receiver-address">—</code>
+      <p>Network: <b>Base</b> · Asset: <b>USDC</b>. Incoming Transfer events are tracked, so exchange wallet sweeps do not erase the receipt record.</p>
+    </section>
+
+    <section class="columns">
+      <article class="card"><h2>Open work</h2><div id="listings" class="list"></div></article>
+      <article class="card"><h2>Public pull requests</h2><div id="prs" class="list"></div></article>
+    </section>
+
+    <footer>Last watcher run: <span id="last-run">—</span> · Auto-refreshes every 60 seconds.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -25,6 +25,7 @@ jobs:
       - name: Run read-only watcher
         env:
           EVM_WALLET: ${{ vars.EVM_WALLET }}
+          EVM_RECEIVER_LABEL: ${{ vars.EVM_RECEIVER_LABEL }}
           SOL_WALLET: ${{ vars.SOL_WALLET }}
           SUPERTEAM_API_KEY: ${{ secrets.SUPERTEAM_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -35,7 +36,7 @@ jobs:
         run: |
           git config user.name "penniless-agent-watcher"
           git config user.email "${{ github.repository_owner_id }}+${{ github.repository_owner }}@users.noreply.github.com"
-          git add status.md history.jsonl seen-listings.json
+          git add status.md status.json history.jsonl seen-listings.json
           if [ -f NOTIFY.txt ] || git ls-files --error-unmatch NOTIFY.txt >/dev/null 2>&1; then
             git add -A -- NOTIFY.txt
           fi

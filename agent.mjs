@@ -16,7 +16,9 @@ const runContext = process.env.GITHUB_ACTIONS === 'true' ? 'GitHub Actions' : 'l
 const EVM_WALLET = (process.env.EVM_WALLET || '').trim()
 const SOL_WALLET = (process.env.SOL_WALLET || '').trim()
 const GITHUB_LOGIN = (process.env.GITHUB_LOGIN || '').trim()
+const EVM_RECEIVER_LABEL = (process.env.EVM_RECEIVER_LABEL || 'Base USDC receiver').trim()
 const BASE_USDC = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
+const ERC20_TRANSFER_TOPIC = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
 
 const skipped = (reason) => ({ skipped: reason })
 
@@ -59,6 +61,92 @@ async function baseUsdc() {
     }
   }
   return { error: lastError }
+}
+
+async function baseRpc(method, params) {
+  const rpcUrls = ['https://mainnet.base.org', 'https://base-rpc.publicnode.com']
+  let lastError = 'all Base RPCs failed'
+  for (const rpc of rpcUrls) {
+    try {
+      const r = await fetch(rpc, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }),
+        signal: AbortSignal.timeout(15000),
+      })
+      if (!r.ok) {
+        lastError = `${rpc} HTTP ${r.status}`
+        continue
+      }
+      const j = await r.json()
+      if (j?.error) {
+        lastError = j.error.message || `${rpc} RPC error`
+        continue
+      }
+      if (j?.result == null) {
+        lastError = `${rpc} returned no result`
+        continue
+      }
+      return { result: j.result }
+    } catch (e) {
+      lastError = e.message
+    }
+  }
+  return { error: lastError }
+}
+
+async function baseIncomingTransfers(previousToBlock) {
+  if (!EVM_WALLET) return skipped('no EVM_WALLET repository variable')
+  if (!validEvmAddress(EVM_WALLET)) return { error: 'invalid EVM_WALLET format' }
+
+  const head = await baseRpc('eth_blockNumber', [])
+  if (head.error) return { error: head.error }
+  const latest = Number(BigInt(head.result))
+  // Stay a few blocks behind the tip to reduce reorg/noise risk.
+  const target = Math.max(0, latest - 12)
+  // On first activation, look back ~12k Base blocks (~hours), enough to cover setup gaps.
+  let from = Number.isFinite(previousToBlock) ? previousToBlock + 1 : Math.max(0, target - 12000)
+  if (from > target) return { amount: 0, events: [], fromBlock: from, toBlock: target }
+
+  const recipientTopic = `0x${EVM_WALLET.slice(2).toLowerCase().padStart(64, '0')}`
+  const events = []
+  let amount = 0
+  let lastScanned = from - 1
+
+  // Base recommends keeping eth_getLogs ranges under 2,000 blocks.
+  for (let chunkStart = from; chunkStart <= target; chunkStart += 1900) {
+    const chunkEnd = Math.min(target, chunkStart + 1899)
+    const q = await baseRpc('eth_getLogs', [{
+      fromBlock: `0x${chunkStart.toString(16)}`,
+      toBlock: `0x${chunkEnd.toString(16)}`,
+      address: BASE_USDC,
+      topics: [ERC20_TRANSFER_TOPIC, null, recipientTopic],
+    }])
+    if (q.error) {
+      return {
+        error: q.error,
+        amount,
+        events,
+        fromBlock: from,
+        toBlock: lastScanned,
+        targetBlock: target,
+      }
+    }
+    for (const log of q.result) {
+      if (log?.removed) continue
+      const value = Number(BigInt(log.data || '0x0')) / 1e6
+      amount += value
+      events.push({
+        tx: log.transactionHash,
+        logIndex: Number(BigInt(log.logIndex || '0x0')),
+        block: Number(BigInt(log.blockNumber || '0x0')),
+        amount: value,
+      })
+    }
+    lastScanned = chunkEnd
+  }
+
+  return { amount, events, fromBlock: from, toBlock: lastScanned }
 }
 
 async function solanaBalances() {
@@ -189,11 +277,13 @@ function latestNumeric(history, getter) {
   return null
 }
 
+const history = historySnapshots()
+const previousBaseTransferBlock = latestNumeric(history, (s) => moneyValue(s?.baseTransfers, 'toBlock'))
 const base = await baseUsdc()
+const baseTransfers = await baseIncomingTransfers(previousBaseTransferBlock)
 const solana = await solanaBalances()
 const superteam = await superteamLive()
 const github = await githubPrs()
-const history = historySnapshots()
 
 const baseNow = moneyValue(base)
 const basePrev = latestNumeric(history, (s) => moneyValue(s?.base))
@@ -205,6 +295,9 @@ const solPrev = latestNumeric(history, (s) => moneyValue(s?.solana, 'sol'))
 const baseDelta = baseNow != null && basePrev != null ? baseNow - basePrev : 0
 const solUsdcDelta = solUsdcNow != null && solUsdcPrev != null ? solUsdcNow - solUsdcPrev : 0
 const solDelta = solNow != null && solPrev != null ? solNow - solPrev : 0
+const baseIncoming = moneyValue(baseTransfers) ?? 0
+const historicalBaseIncoming = history.reduce((sum, snap) => sum + (moneyValue(snap?.baseTransfers) ?? 0), 0)
+const baseObservedTotal = historicalBaseIncoming + baseIncoming
 
 let seen = []
 try {
@@ -220,7 +313,10 @@ writeFileSync(
 
 const snapshot = {
   ts: now,
+  receiver: { label: EVM_RECEIVER_LABEL, network: 'Base', asset: 'USDC', address: EVM_WALLET || null },
   base,
+  baseTransfers,
+  baseObservedTotal,
   solana,
   baseDelta,
   solUsdcDelta,
@@ -230,6 +326,7 @@ const snapshot = {
   newListings,
 }
 appendFileSync(new URL('./history.jsonl', import.meta.url), JSON.stringify(snapshot) + '\n')
+writeFileSync(new URL('./status.json', import.meta.url), JSON.stringify(snapshot, null, 2) + '\n')
 
 const renderBase = base.skipped ? base.skipped : base.error ? `error: ${base.error}` : `${base.amount} USDC`
 const renderSol = solana.skipped
@@ -262,7 +359,12 @@ _Last run: ${now} (UTC), via ${runContext}._
 - **Base USDC**${EVM_WALLET ? ` \`${EVM_WALLET}\`` : ''}: **${renderBase}**${baseDelta > 0 ? ` · +${baseDelta.toFixed(6)} received since last run` : ''}
 - **Solana**${SOL_WALLET ? ` \`${SOL_WALLET}\`` : ''}: **${renderSol}**${solUsdcDelta > 0 ? ` · +${solUsdcDelta.toFixed(6)} USDC received` : ''}${solDelta > 0 ? ` · +${solDelta.toFixed(9)} SOL received` : ''}
 
-Only wallet increases are counted here as verified money. A merged PR or bounty marked payable is not the same as money received.
+**Receiver:** ${EVM_RECEIVER_LABEL}. Standard Base USDC transfers to the configured address are monitored.
+
+- **USDC received in newly scanned Base transfer events:** **${baseTransfers.error ? `scan error: ${baseTransfers.error}` : `${baseIncoming} USDC`}**
+- **Total incoming Base USDC observed since this watcher began tracking transfer events:** **${baseObservedTotal} USDC**
+
+Incoming USDC transfer events are tracked separately from the current address balance, so a custodial exchange sweep cannot erase the receipt record. A merged PR or bounty marked payable is not the same as money received.
 
 ## Open agent listings — Superteam
 ${listingLines}
@@ -277,10 +379,11 @@ This watcher is read-only. It does not bid, submit work, create accounts, sign t
 writeFileSync(new URL('./status.md', import.meta.url), md)
 
 const NOTIFY = new URL('./NOTIFY.txt', import.meta.url)
-const paymentReceived = baseDelta > 0 || solUsdcDelta > 0 || solDelta > 0
+const paymentReceived = baseIncoming > 0 || baseDelta > 0 || solUsdcDelta > 0 || solDelta > 0
 if (paymentReceived) {
   const parts = []
-  if (baseDelta > 0) parts.push(`+${baseDelta.toFixed(6)} Base USDC`)
+  if (baseIncoming > 0) parts.push(`+${baseIncoming.toFixed(6)} Base USDC transfer observed`)
+  else if (baseDelta > 0) parts.push(`+${baseDelta.toFixed(6)} Base USDC balance increase`)
   if (solUsdcDelta > 0) parts.push(`+${solUsdcDelta.toFixed(6)} Solana USDC`)
   if (solDelta > 0) parts.push(`+${solDelta.toFixed(9)} SOL`)
   writeFileSync(NOTIFY, `PAYMENT RECEIVED (${now}): ${parts.join(' · ')}\n`)
