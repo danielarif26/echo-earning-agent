@@ -1,16 +1,23 @@
 {
-  "ts": "2026-09-13T14:58:41.375517Z",
-  "mode": "autonomous",
+  "ts": "2026-09-13T15:28:45.894615Z",
+  "mode": "autonomous-earn-spend",
   "engine": "claude2 / FreeLLMAPI",
-  "state": "worked",
-  "pr_url": null,
-  "payment_evidence": null,
-  "submission_url": null,
-  "tests": null,
-  "work_url": null,
-  "potential_reward": null,
-  "next_action": "Continue monitoring for credible earning opportunities.",
-  "activity": "Evaluated open bounty opportunities and performed an earning cycle. Identified that most 'bounty-demo' and 'bounty-plaza' opportunities are likely free-work harvesters or scams based on Rule 1 (lack of payment evidence). Reverted changes to 'bounty-demo' to remain compliant with safety and earning rules. Currently, no credible zero-cost earning opportunities met the security criteria for submission this cycle.",
-  "opportunity": null,
-  "status": "worked"
+  "state": "running",
+  "activity": "Scanning earning rails; earned-wallet spending is enabled",
+  "wallet": {
+    "ts": "2026-09-13T15:28:45.808799Z",
+    "spending_enabled": true,
+    "provider": "AgentCash",
+    "base_address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37",
+    "base_usdc": 0,
+    "solana_address": "ajVf8X2Nsu2ud25ar6VfTgxGo628wUjSqea6iXdPsQR",
+    "solana_usdc": 0,
+    "spendable_usdc_total": 0,
+    "spending_limit": "available earned wallet balance",
+    "external_budget_eur": 0,
+    "cashout_base_address": "0xd9a437b5599d5bd625327e0dea9988dfc0c6d5b0",
+    "bitrefill_enabled": true,
+    "x402_enabled": true
+  },
+  "next_action": "Continue monitoring for credible earning opportunities."
 }
