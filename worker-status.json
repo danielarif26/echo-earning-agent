@@ -1,11 +1,11 @@
 {
-  "ts": "2026-09-13T17:43:00.022895Z",
+  "ts": "2026-09-13T18:03:04.683619Z",
   "mode": "autonomous-earn-spend",
   "engine": "claude2 / FreeLLMAPI",
-  "state": "running",
-  "activity": "Evaluating 39 earning candidates \u00b7 spendable earned balance: 0 USDC",
+  "state": "error",
+  "activity": "Cycle reached the 20-minute limit; retrying automatically next cycle",
   "wallet": {
-    "ts": "2026-09-13T17:42:52.469430Z",
+    "ts": "2026-09-13T18:03:04.615083Z",
     "spending_enabled": true,
     "provider": "AgentCash",
     "base_address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37",
