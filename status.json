@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-13T13:27:23.410Z",
+  "ts": "2026-09-13T13:31:47.700Z",
   "receiver": {
     "label": "Binance Base USDC deposit address",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51258159,
-    "toBlock": 51258336
+    "fromBlock": 51258337,
+    "toBlock": 51258468
   },
   "baseObservedTotal": 0,
   "solana": {
