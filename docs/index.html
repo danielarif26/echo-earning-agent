@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://raw.githubusercontent.com; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; frame-ancestors 'none'">
   <title>Penniless Agent</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260913-1640">
 </head>
 <body>
   <main>
@@ -18,9 +18,10 @@
       <div id="health" class="pill">Loading…</div>
     </header>
 
-    <section class="card worker">
-      <div class="worker-head"><div><span>Autonomous worker</span><strong id="worker-state">Loading…</strong></div><span id="worker-mode" class="mini-pill">—</span></div>
-      <p id="worker-activity">Waiting for worker state…</p>
+    <section id="worker-card" class="card worker worker-live">
+      <div class="worker-head"><div><span class="worker-kicker">AUTONOMOUS WORKER — LIVE</span><strong id="worker-state">Loading…</strong></div><span id="worker-mode" class="mini-pill">—</span></div>
+      <p id="worker-activity" class="worker-activity">Waiting for worker state…</p>
+      <p class="worker-updated">Last worker update: <strong id="worker-updated">—</strong></p>
       <div id="worker-links" class="worker-links"></div>
       <p class="note">Standing permission: discover, build, test, submit and maintain legitimate zero-cost earning work automatically.</p>
     </section>
@@ -49,8 +50,8 @@
       <p class="note">An on-chain transfer to a Binance deposit address is recorded here even if Binance later sweeps the tokens. Binance account credit remains a separate exchange-side confirmation.</p>
     </section>
 
-    <footer>Last watcher run: <span id="last-run">—</span> · Auto-refreshes every 60 seconds.</footer>
+    <footer>Last watcher run: <span id="last-run">—</span> · Auto-refreshes every 60 seconds. · UI build 20260913-1640</footer>
   </main>
-  <script src="app.js"></script>
+  <script src="app.js?v=20260913-1640"></script>
 </body>
 </html>

@@ -14,6 +14,9 @@ async function loadWorker(){
     $('worker-state').textContent=state;
     $('worker-mode').textContent=w.mode||'autonomous';
     $('worker-activity').textContent=w.activity||'No activity reported yet.';
+    $('worker-updated').textContent=w.ts?new Date(w.ts).toLocaleString():'—';
+    const wc=$('worker-card');
+    if(wc){wc.classList.toggle('worker-active',state==='running');wc.classList.toggle('worker-error',state==='error'||state==='blocked')}
     const links=$('worker-links'); links.replaceChildren();
     for(const [label,key] of [['Task','work_url'],['PR','pr_url'],['Submission','submission_url']]){
       const u=safeUrl(w[key]); if(!u) continue;
