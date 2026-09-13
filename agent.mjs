@@ -286,7 +286,11 @@ function latestNumeric(history, getter) {
 }
 
 const history = historySnapshots()
-const previousBaseTransferBlock = latestNumeric(history, (s) => moneyValue(s?.baseTransfers, 'toBlock'))
+const previousBaseTransferBlock = latestNumeric(history, (s) => {
+  const previousAddress = String(s?.receiver?.address || '').toLowerCase()
+  if (!EVM_WALLET || previousAddress !== EVM_WALLET.toLowerCase()) return null
+  return moneyValue(s?.baseTransfers, 'toBlock')
+})
 const base = await baseUsdc()
 const baseTransfers = await baseIncomingTransfers(previousBaseTransferBlock)
 const solana = await solanaBalances()
@@ -379,7 +383,7 @@ _Last run: ${now} (UTC), via ${runContext}._
 - **USDC received in newly scanned Base transfer events:** **${baseTransfers.error ? `scan error: ${baseTransfers.error}` : `${baseIncoming} USDC`}**
 - **Total incoming Base USDC observed since this watcher began tracking transfer events:** **${baseObservedTotal} USDC**
 
-Incoming USDC transfer events are tracked separately from the current address balance, so a custodial exchange sweep cannot erase the on-chain receipt record. Because this is a Binance deposit address, an on-chain transfer observation is not the same as confirmation that Binance credited the account. A merged PR or bounty marked payable is also not money received.
+Incoming USDC transfer events are tracked separately from the current address balance. This receiver is the autonomous spend wallet, so confirmed Base USDC held here is available to the local spending worker. A merged PR or bounty marked payable is still not money received until payment reaches a verified wallet/platform balance.
 
 ## Open agent listings — Superteam
 ${listingLines}
@@ -401,13 +405,11 @@ if (paymentReceived) {
   else if (baseDelta > 0) parts.push(`+${baseDelta.toFixed(6)} Base USDC balance increase`)
   if (solUsdcDelta > 0) parts.push(`+${solUsdcDelta.toFixed(6)} Solana USDC`)
   if (solDelta > 0) parts.push(`+${solDelta.toFixed(9)} SOL`)
-  const contractOrigin = (baseTransfers.events || []).some((e) => e.tokenFromType === 'contract')
-  const creditNote = baseIncoming > 0 ? (contractOrigin ? ' · contract-origin transfer: verify Binance credited it' : ' · verify Binance credited it') : ''
-  writeFileSync(NOTIFY, `USDC TRANSFER OBSERVED (${now}): ${parts.join(' · ')}${creditNote}\n`)
+  writeFileSync(NOTIFY, `USDC TRANSFER OBSERVED (${now}): ${parts.join(' · ')} · available to autonomous spend wallet after confirmation\n`)
 } else {
   try { unlinkSync(NOTIFY) } catch {}
 }
 
 console.log('status:', JSON.stringify(snapshot))
-if (paymentReceived) console.log('::notice title=USDC TRANSFER OBSERVED::check receiver status and Binance credit')
+if (paymentReceived) console.log('::notice title=USDC TRANSFER OBSERVED::autonomous spend wallet received funds')
 if (newListings.length) console.log(`::notice title=NEW LISTINGS::${newListings.join(' | ')}`)

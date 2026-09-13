@@ -15,6 +15,14 @@ async function loadWorker(){
     $('worker-mode').textContent=w.mode||'autonomous';
     $('worker-activity').textContent=w.activity||'No activity reported yet.';
     $('worker-updated').textContent=w.ts?new Date(w.ts).toLocaleString():'—';
+    const wallet=w.wallet||{};
+    const spendable=Number(wallet.spendable_usdc_total??0);
+    const spent=Number(w.spent_usdc??0);
+    $('spendable').textContent=`${fmt(spendable)} USDC`;
+    $('spent').textContent=`${fmt(spent)} USDC`;
+    $('spending-state').textContent=wallet.spending_enabled?'Enabled':'Disabled';
+    $('spending-provider').textContent=wallet.provider||'AgentCash';
+    $('spending-activity').textContent=w.spending_activity||'No spending yet.';
     const wc=$('worker-card');
     if(wc){wc.classList.toggle('worker-active',state==='running');wc.classList.toggle('worker-error',state==='error'||state==='blocked')}
     const links=$('worker-links'); links.replaceChildren();
@@ -32,8 +40,6 @@ async function load(){
     const r=await fetch(`${DATA}?t=${Date.now()}`,{cache:'no-store'}); if(!r.ok) throw new Error(`HTTP ${r.status}`);
     const d=await r.json();
     const base=d.base||{}, transfers=d.baseTransfers||{}, st=d.superteam||{}, gh=d.github||{}, rec=d.receiver||{};
-    $('balance').textContent=base.error?'RPC error':`${fmt(base.amount)} USDC`;
-    $('received').textContent=`${fmt(d.baseObservedTotal||0)} USDC`;
     $('listing-count').textContent=Array.isArray(st.open)?st.open.length:'—';
     $('pr-count').textContent=Array.isArray(gh.prs)?gh.prs.length:'—';
     $('receiver-label').textContent=rec.label||'Base USDC receiver';

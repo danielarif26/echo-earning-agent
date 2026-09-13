@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://raw.githubusercontent.com; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; frame-ancestors 'none'">
   <title>Penniless Agent</title>
-  <link rel="stylesheet" href="styles.css?v=20260913-1640">
+  <link rel="stylesheet" href="styles.css?v=20260913-1955">
 </head>
 <body>
   <main>
@@ -13,7 +13,7 @@
       <div>
         <p class="eyebrow">PENNILESS AGENT</p>
         <h1>Autonomous earning agent</h1>
-        <p class="sub">24/7 watcher + autonomous zero-spend worker. No private keys or spending capability.</p>
+        <p class="sub">24/7 autonomous earn → hold → spend agent. External budget stays EUR0; earned funds can be spent or reinvested automatically.</p>
       </div>
       <div id="health" class="pill">Loading…</div>
     </header>
@@ -23,20 +23,26 @@
       <p id="worker-activity" class="worker-activity">Waiting for worker state…</p>
       <p class="worker-updated">Last worker update: <strong id="worker-updated">—</strong></p>
       <div id="worker-links" class="worker-links"></div>
-      <p class="note">Standing permission: discover, build, test, submit and maintain legitimate zero-cost earning work automatically.</p>
+      <p class="note">Standing permission: discover, build, test, submit, maintain, earn, and autonomously spend/reinvest funds earned into the dedicated agent wallet.</p>
     </section>
 
     <section class="grid metrics">
-      <article class="card"><span>Current Base USDC balance</span><strong id="balance">—</strong></article>
-      <article class="card"><span>Observed incoming USDC</span><strong id="received">—</strong></article>
+      <article class="card"><span>Spendable earned USDC</span><strong id="spendable">—</strong></article>
+      <article class="card"><span>Total spent by agent</span><strong id="spent">—</strong></article>
       <article class="card"><span>Open Superteam listings</span><strong id="listing-count">—</strong></article>
       <article class="card"><span>Public PRs tracked</span><strong id="pr-count">—</strong></article>
     </section>
 
+    <section class="card spending">
+      <div class="worker-head"><div><span>Autonomous spending</span><strong id="spending-state">Loading…</strong></div><span id="spending-provider" class="mini-pill">—</span></div>
+      <p id="spending-activity">Waiting for spending state…</p>
+      <p class="note">Only funds received into the dedicated AgentCash wallet are spendable. External budget remains EUR0. Bitrefill and x402 spending are enabled.</p>
+    </section>
+
     <section class="card receiver">
-      <div><span>Receive address</span><strong id="receiver-label">—</strong></div>
+      <div><span>Autonomous earn + spend address</span><strong id="receiver-label">—</strong></div>
       <code id="receiver-address">—</code>
-      <p>Network: <b>Base</b> · Asset: <b>USDC</b>. Incoming Transfer events are tracked, so exchange wallet sweeps do not erase the receipt record.</p>
+      <p>Network: <b>Base</b> · Asset: <b>USDC</b>. This is the dedicated AgentCash wallet used to receive earnings and sign supported autonomous payments.</p>
     </section>
 
     <section class="columns">
@@ -47,11 +53,11 @@
     <section class="card receipts">
       <h2>Observed Base USDC receipts</h2>
       <div id="receipts" class="list"></div>
-      <p class="note">An on-chain transfer to a Binance deposit address is recorded here even if Binance later sweeps the tokens. Binance account credit remains a separate exchange-side confirmation.</p>
+      <p class="note">Incoming Base USDC is tracked as earned-wallet funding. Verified funds in this wallet are available for autonomous spending or reinvestment.</p>
     </section>
 
-    <footer>Last watcher run: <span id="last-run">—</span> · Auto-refreshes every 60 seconds. · UI build 20260913-1640</footer>
+    <footer>Last watcher run: <span id="last-run">—</span> · Auto-refreshes every 60 seconds. · UI build 20260913-1955</footer>
   </main>
-  <script src="app.js?v=20260913-1640"></script>
+  <script src="app.js?v=20260913-1955"></script>
 </body>
 </html>
