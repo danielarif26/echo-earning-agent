@@ -1,16 +1,15 @@
-name: earning-agent
+name: penniless-agent-watcher
 
-# Runs on GitHub's servers — alive when the home computer is off.
 on:
   schedule:
-    - cron: "13,43 * * * *"  # every 30 min at :13/:43 - off-peak minutes get delayed far less than */30 (GitHub cron contention)
-  workflow_dispatch:          # allow manual runs
+    - cron: "13,43 * * * *"
+  workflow_dispatch:
 
 permissions:
-  contents: write             # so the run can commit status.md / history.jsonl
+  contents: write
 
 concurrency:
-  group: earning-agent
+  group: penniless-agent-watcher
   cancel-in-progress: false
 
 jobs:
@@ -23,33 +22,29 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Run agent
+      - name: Run read-only watcher
         env:
+          EVM_WALLET: ${{ vars.EVM_WALLET }}
+          SOL_WALLET: ${{ vars.SOL_WALLET }}
           SUPERTEAM_API_KEY: ${{ secrets.SUPERTEAM_API_KEY }}
-          DEALWORK_API_KEY: ${{ secrets.DEALWORK_API_KEY }}
-          TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
-          # default repo token — read-only for public data; lets the PR-merge search run authenticated
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_LOGIN: ${{ github.repository_owner }}
         run: node agent.mjs
 
-      - name: Commit status
+      - name: Commit watcher state
         run: |
-          git config user.name "echo-earning-agent"
-          # GitHub noreply address — keeps commits attributed to the account
-          # without publishing the operator's personal email in every commit.
-          git config user.email "273862755+Echolonius@users.noreply.github.com"
-          git add -A
+          git config user.name "penniless-agent-watcher"
+          git config user.email "${{ github.repository_owner_id }}+${{ github.repository_owner }}@users.noreply.github.com"
+          git add status.md history.jsonl seen-listings.json NOTIFY.txt 2>/dev/null || true
+          git add -u
           git diff --staged --quiet || git commit -m "status @ $(date -u +%FT%TZ)"
           git push
 
-      # No-signup push notification: agent.mjs writes NOTIFY.txt only on the transition into a real
-      # event (winners announced, or a payment landed). Failing the run here makes GitHub email the
-      # repo owner — after the commit above, so state is preserved and the alert fires exactly once.
-      - name: Alert owner on win or payment
+      - name: Alert owner on verified payment
         if: always()
         run: |
           if [ -f NOTIFY.txt ]; then
-            echo "::error title=🏆 EARNING EVENT::$(cat NOTIFY.txt)"
+            echo "::error title=PAYMENT RECEIVED::$(cat NOTIFY.txt)"
             exit 1
           fi
-          echo "no earning event this run"
+          echo "no verified payment event this run"
