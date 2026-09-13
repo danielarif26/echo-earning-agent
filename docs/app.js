@@ -1,9 +1,28 @@
 const DATA='https://raw.githubusercontent.com/danielarif26/echo-earning-agent/main/status.json';
+const WORKER='https://raw.githubusercontent.com/danielarif26/echo-earning-agent/main/worker-status.json';
 const $=id=>document.getElementById(id);
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
 const fmt=n=>Number.isFinite(Number(n))?Number(n).toLocaleString(undefined,{maximumFractionDigits:6}):'—';
+const safeUrl=u=>{try{const x=new URL(u);return x.protocol==='https:'?x.href:null}catch{return null}};
 const githubUrl=u=>{try{const x=new URL(u);return x.protocol==='https:'&&x.hostname==='github.com'?x.href:null}catch{return null}};
 function item(html){const d=document.createElement('div');d.className='item';d.innerHTML=html;return d}
+async function loadWorker(){
+  try{
+    const r=await fetch(`${WORKER}?t=${Date.now()}`,{cache:'no-store'}); if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    const w=await r.json();
+    const state=String(w.state||w.status||'unknown');
+    $('worker-state').textContent=state;
+    $('worker-mode').textContent=w.mode||'autonomous';
+    $('worker-activity').textContent=w.activity||'No activity reported yet.';
+    const links=$('worker-links'); links.replaceChildren();
+    for(const [label,key] of [['Task','work_url'],['PR','pr_url'],['Submission','submission_url']]){
+      const u=safeUrl(w[key]); if(!u) continue;
+      const a=document.createElement('a'); a.href=u; a.target='_blank'; a.rel='noopener noreferrer'; a.textContent=label; links.append(a);
+    }
+    if(w.potential_reward){const x=document.createElement('span');x.textContent=`Potential reward: ${w.potential_reward}`;links.append(x)}
+    if(w.ts){const x=document.createElement('span');x.textContent=`Worker update: ${new Date(w.ts).toLocaleString()}`;links.append(x)}
+  }catch(e){$('worker-state').textContent='unavailable';$('worker-activity').textContent='Worker state could not be loaded.'}
+}
 async function load(){
   const health=$('health');
   try{
@@ -28,5 +47,6 @@ async function load(){
     const problems=[base.error,transfers.error,st.error,gh.error].filter(Boolean);
     health.textContent=stale?'Watcher stale':problems.length?'Degraded':'Watcher healthy'; health.className=`pill ${(stale||problems.length)?'warn':'ok'}`;
   }catch(e){health.textContent='Dashboard data unavailable';health.className='pill warn'}
+  await loadWorker();
 }
 load(); setInterval(load,60000);
