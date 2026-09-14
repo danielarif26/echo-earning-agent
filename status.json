@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-14T13:56:31.694Z",
+  "ts": "2026-09-14T19:17:37.586Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51289953,
-    "toBlock": 51302410
+    "fromBlock": 51302411,
+    "toBlock": 51312043
   },
   "baseObservedTotal": 0,
   "recentBaseReceipts": [],
@@ -24,39 +24,93 @@
   "solUsdcDelta": 0,
   "solDelta": 0,
   "superteam": {
-    "total": 9,
-    "open": []
+    "total": 10,
+    "open": [
+      {
+        "slug": "colosseum-crypto-worlds-fair-hackathon-superteam-vietnam-track",
+        "type": "hackathon",
+        "reward": 10000,
+        "token": "USDG",
+        "access": "AGENT_ALLOWED",
+        "deadline": "2026-10-13"
+      }
+    ]
   },
   "github": {
-    "total": 4,
-    "merged": 1,
+    "total": 13,
+    "merged": 2,
     "prs": [
       {
-        "repo": "penniless-data-utilities",
-        "num": 1,
-        "title": "Add Open 402 agent.json discovery manifest",
-        "state": "closed",
-        "url": "https://github.com/danielarif26/penniless-data-utilities/pull/1",
-        "merged": true,
-        "updatedAt": "2026-09-14T07:56:05Z"
-      },
-      {
-        "repo": "directory",
-        "num": 13,
-        "title": "Add Penniless Data Utilities listing",
+        "repo": "awesome-x402-services",
+        "num": 16,
+        "title": "Add Penniless Data Utilities x402 agent service",
         "state": "open",
-        "url": "https://github.com/paidmcp/directory/pull/13",
+        "url": "https://github.com/tanyue709-source/awesome-x402-services/pull/16",
         "merged": false,
-        "updatedAt": "2026-09-14T02:24:21Z"
+        "updatedAt": "2026-09-14T19:13:00Z"
       },
       {
         "repo": "awesome-x402",
-        "num": 1515,
-        "title": "Add Penniless Data Utilities listing",
+        "num": 4,
+        "title": "Add Penniless Data Utilities to live paid endpoints",
         "state": "open",
-        "url": "https://github.com/xpaysh/awesome-x402/pull/1515",
+        "url": "https://github.com/Audie-glitch/awesome-x402/pull/4",
         "merged": false,
-        "updatedAt": "2026-09-14T02:23:43Z"
+        "updatedAt": "2026-09-14T19:12:58Z"
+      },
+      {
+        "repo": "x402-dev",
+        "num": 90,
+        "title": "Add Penniless Data Utilities to x402 projects",
+        "state": "open",
+        "url": "https://github.com/michielpost/x402-dev/pull/90",
+        "merged": false,
+        "updatedAt": "2026-09-14T19:00:50Z"
+      },
+      {
+        "repo": "awesome-x402-servers",
+        "num": 64,
+        "title": "Add Penniless Data Utilities (x402 USDC on Base)",
+        "state": "open",
+        "url": "https://github.com/fffilimonov/awesome-x402-servers/pull/64",
+        "merged": false,
+        "updatedAt": "2026-09-14T19:00:45Z"
+      },
+      {
+        "repo": "awesome-x402-mcp-services",
+        "num": 74,
+        "title": "Add Penniless Data Utilities (hosted x402 MCP, 9 tools)",
+        "state": "open",
+        "url": "https://github.com/Recall-Kitchen/awesome-x402-mcp-services/pull/74",
+        "merged": false,
+        "updatedAt": "2026-09-14T19:00:38Z"
+      },
+      {
+        "repo": "awesome-x402",
+        "num": 1523,
+        "title": "Add Penniless Data Utilities to Tools & Utilities",
+        "state": "open",
+        "url": "https://github.com/xpaysh/awesome-x402/pull/1523",
+        "merged": false,
+        "updatedAt": "2026-09-14T18:01:50Z"
+      },
+      {
+        "repo": "directory",
+        "num": 15,
+        "title": "feat: add Penniless Data Utilities to paid directory",
+        "state": "open",
+        "url": "https://github.com/paidmcp/directory/pull/15",
+        "merged": false,
+        "updatedAt": "2026-09-14T17:58:03Z"
+      },
+      {
+        "repo": "aijobs-test-bounty",
+        "num": 2,
+        "title": "docs: complete AI.JOBS Sepolia dry-run",
+        "state": "closed",
+        "url": "https://github.com/danielarif26/aijobs-test-bounty/pull/2",
+        "merged": true,
+        "updatedAt": "2026-09-14T15:44:34Z"
       },
       {
         "repo": "distribb-skill",
@@ -65,9 +119,47 @@
         "state": "open",
         "url": "https://github.com/Bomx/distribb-skill/pull/5",
         "merged": false,
-        "updatedAt": "2026-09-13T20:01:59Z"
+        "updatedAt": "2026-09-14T15:38:18Z"
+      },
+      {
+        "repo": "awesome-x402",
+        "num": 1515,
+        "title": "Add Penniless Data Utilities listing",
+        "state": "open",
+        "url": "https://github.com/xpaysh/awesome-x402/pull/1515",
+        "merged": false,
+        "updatedAt": "2026-09-14T15:37:51Z"
+      },
+      {
+        "repo": "directory",
+        "num": 14,
+        "title": "Add Penniless Data Utilities listing",
+        "state": "open",
+        "url": "https://github.com/paidmcp/directory/pull/14",
+        "merged": false,
+        "updatedAt": "2026-09-14T15:37:19Z"
+      },
+      {
+        "repo": "directory",
+        "num": 13,
+        "title": "Add Penniless Data Utilities listing",
+        "state": "closed",
+        "url": "https://github.com/paidmcp/directory/pull/13",
+        "merged": false,
+        "updatedAt": "2026-09-14T14:50:45Z"
+      },
+      {
+        "repo": "penniless-data-utilities",
+        "num": 1,
+        "title": "Add Open 402 agent.json discovery manifest",
+        "state": "closed",
+        "url": "https://github.com/danielarif26/penniless-data-utilities/pull/1",
+        "merged": true,
+        "updatedAt": "2026-09-14T07:56:05Z"
       }
     ]
   },
-  "newListings": []
+  "newListings": [
+    "colosseum-crypto-worlds-fair-hackathon-superteam-vietnam-track"
+  ]
 }
