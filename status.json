@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-14T19:17:37.586Z",
+  "ts": "2026-09-14T22:43:32.207Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51302411,
-    "toBlock": 51312043
+    "fromBlock": 51312044,
+    "toBlock": 51318220
   },
   "baseObservedTotal": 0,
   "recentBaseReceipts": [],
@@ -37,9 +37,45 @@
     ]
   },
   "github": {
-    "total": 13,
-    "merged": 2,
+    "total": 14,
+    "merged": 3,
     "prs": [
+      {
+        "repo": "awesome-x402-mcp-services",
+        "num": 74,
+        "title": "Add Penniless Data Utilities (hosted x402 MCP, 9 tools)",
+        "state": "closed",
+        "url": "https://github.com/Recall-Kitchen/awesome-x402-mcp-services/pull/74",
+        "merged": true,
+        "updatedAt": "2026-09-14T21:46:09Z"
+      },
+      {
+        "repo": "directory",
+        "num": 14,
+        "title": "Add Penniless Data Utilities listing",
+        "state": "closed",
+        "url": "https://github.com/paidmcp/directory/pull/14",
+        "merged": false,
+        "updatedAt": "2026-09-14T21:45:51Z"
+      },
+      {
+        "repo": "awesome-x402",
+        "num": 1515,
+        "title": "Add Penniless Data Utilities listing",
+        "state": "closed",
+        "url": "https://github.com/xpaysh/awesome-x402/pull/1515",
+        "merged": false,
+        "updatedAt": "2026-09-14T21:45:49Z"
+      },
+      {
+        "repo": "awesome-x402",
+        "num": 23,
+        "title": "Add Penniless Data Utilities x402 service",
+        "state": "open",
+        "url": "https://github.com/Rug-Munch-Media-LLC/awesome-x402/pull/23",
+        "merged": false,
+        "updatedAt": "2026-09-14T19:22:40Z"
+      },
       {
         "repo": "awesome-x402-services",
         "num": 16,
@@ -75,15 +111,6 @@
         "url": "https://github.com/fffilimonov/awesome-x402-servers/pull/64",
         "merged": false,
         "updatedAt": "2026-09-14T19:00:45Z"
-      },
-      {
-        "repo": "awesome-x402-mcp-services",
-        "num": 74,
-        "title": "Add Penniless Data Utilities (hosted x402 MCP, 9 tools)",
-        "state": "open",
-        "url": "https://github.com/Recall-Kitchen/awesome-x402-mcp-services/pull/74",
-        "merged": false,
-        "updatedAt": "2026-09-14T19:00:38Z"
       },
       {
         "repo": "awesome-x402",
@@ -122,24 +149,6 @@
         "updatedAt": "2026-09-14T15:38:18Z"
       },
       {
-        "repo": "awesome-x402",
-        "num": 1515,
-        "title": "Add Penniless Data Utilities listing",
-        "state": "open",
-        "url": "https://github.com/xpaysh/awesome-x402/pull/1515",
-        "merged": false,
-        "updatedAt": "2026-09-14T15:37:51Z"
-      },
-      {
-        "repo": "directory",
-        "num": 14,
-        "title": "Add Penniless Data Utilities listing",
-        "state": "open",
-        "url": "https://github.com/paidmcp/directory/pull/14",
-        "merged": false,
-        "updatedAt": "2026-09-14T15:37:19Z"
-      },
-      {
         "repo": "directory",
         "num": 13,
         "title": "Add Penniless Data Utilities listing",
@@ -159,7 +168,5 @@
       }
     ]
   },
-  "newListings": [
-    "colosseum-crypto-worlds-fair-hackathon-superteam-vietnam-track"
-  ]
+  "newListings": []
 }
