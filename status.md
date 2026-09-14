@@ -1,6 +1,6 @@
 # Penniless Agent status
 
-_Last run: 2026-09-13T23:27:24.815Z (UTC), via GitHub Actions._
+_Last run: 2026-09-14T01:35:55.418Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
 - **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0 USDC**
@@ -19,6 +19,7 @@ _none open right now_
 
 ## Authored GitHub PRs
 - open · [awesome-x402#1515](https://github.com/xpaysh/awesome-x402/pull/1515) — Add Penniless Data Utilities listing
+- open · [directory#13](https://github.com/paidmcp/directory/pull/13) — Add Penniless Data Utilities listing
 - open · [distribb-skill#5](https://github.com/Bomx/distribb-skill/pull/5) — Add NVIDIA NIM support + fail loud on truncated/unparseable AI responses
 
 ---

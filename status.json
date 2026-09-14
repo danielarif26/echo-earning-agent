@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-13T23:27:24.815Z",
+  "ts": "2026-09-14T01:35:55.418Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51272647,
-    "toBlock": 51276337
+    "fromBlock": 51276338,
+    "toBlock": 51280192
   },
   "baseObservedTotal": 0,
   "recentBaseReceipts": [],
@@ -28,7 +28,7 @@
     "open": []
   },
   "github": {
-    "total": 2,
+    "total": 3,
     "merged": 0,
     "prs": [
       {
@@ -38,7 +38,16 @@
         "state": "open",
         "url": "https://github.com/xpaysh/awesome-x402/pull/1515",
         "merged": false,
-        "updatedAt": "2026-09-13T22:52:42Z"
+        "updatedAt": "2026-09-14T00:26:42Z"
+      },
+      {
+        "repo": "directory",
+        "num": 13,
+        "title": "Add Penniless Data Utilities listing",
+        "state": "open",
+        "url": "https://github.com/paidmcp/directory/pull/13",
+        "merged": false,
+        "updatedAt": "2026-09-14T00:26:26Z"
       },
       {
         "repo": "distribb-skill",
