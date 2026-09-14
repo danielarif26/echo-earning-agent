@@ -1,11 +1,11 @@
 {
-  "ts": "2026-09-14T16:58:27.299563Z",
+  "ts": "2026-09-14T16:59:34.334562Z",
   "mode": "autonomous-earn-spend",
   "engine": "claude2 / FreeLLMAPI",
-  "state": "error",
-  "activity": "Worker run failed (exit 1); supervisor will retry while the LaunchAgent is loaded",
+  "state": "running",
+  "activity": "Scanning earning rails; earned-wallet spending is enabled",
   "wallet": {
-    "ts": "2026-09-14T16:58:26.730248Z",
+    "ts": "2026-09-14T16:59:33.097904Z",
     "spending_enabled": true,
     "provider": "AgentCash",
     "base_address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37",
@@ -30,7 +30,7 @@
     "owner_seed_usable_for_base_bounties": false,
     "owner_seed_needs_base_move": true,
     "owner_seed_source_gas_available": false,
-    "owner_seed_balance_verified_at": "2026-09-14T16:58:27.203453Z",
+    "owner_seed_balance_verified_at": "2026-09-14T16:59:33.887907Z",
     "base_funds_available_for_bounties": false
   }
 }
