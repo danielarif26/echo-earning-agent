@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-14T01:35:55.418Z",
+  "ts": "2026-09-14T05:30:00.000Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -60,5 +60,12 @@
       }
     ]
   },
-  "newListings": []
+  "newListings": [],
+  "facilitator_stats": {
+    "url": "https://penniless-json-repair.sjaman.workers.dev/stats",
+    "total_requests": 141,
+    "paid_attempts": 105,
+    "settled_success": 0,
+    "note": "x402 facilitator operational with PayAI, 0 USDC received per block scan"
+  }
 }
