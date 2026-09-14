@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-14T07:01:16.002Z",
+  "ts": "2026-09-14T13:56:31.694Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51280193,
-    "toBlock": 51289952
+    "fromBlock": 51289953,
+    "toBlock": 51302410
   },
   "baseObservedTotal": 0,
   "recentBaseReceipts": [],
@@ -28,9 +28,18 @@
     "open": []
   },
   "github": {
-    "total": 3,
-    "merged": 0,
+    "total": 4,
+    "merged": 1,
     "prs": [
+      {
+        "repo": "penniless-data-utilities",
+        "num": 1,
+        "title": "Add Open 402 agent.json discovery manifest",
+        "state": "closed",
+        "url": "https://github.com/danielarif26/penniless-data-utilities/pull/1",
+        "merged": true,
+        "updatedAt": "2026-09-14T07:56:05Z"
+      },
       {
         "repo": "directory",
         "num": 13,
