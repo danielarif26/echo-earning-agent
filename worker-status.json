@@ -1,9 +1,9 @@
 {
-  "ts": "2026-09-14T16:22:59.185775Z",
+  "ts": "2026-09-14T16:23:20.073990Z",
   "mode": "autonomous-earn-spend",
   "engine": "claude2 / FreeLLMAPI",
   "state": "running",
-  "activity": "Scanning earning rails; earned-wallet spending is enabled",
+  "activity": "Evaluating 660 earning candidates \u00b7 spendable earned balance: 0 USDC",
   "wallet": {
     "ts": "2026-09-14T16:22:58.731643Z",
     "spending_enabled": true,
