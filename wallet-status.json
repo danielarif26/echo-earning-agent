@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-14T15:58:08.836124Z",
+  "ts": "2026-09-14T16:22:58.731643Z",
   "spending_enabled": true,
   "provider": "AgentCash",
   "base_address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37",
@@ -7,8 +7,6 @@
   "solana_address": "ajVf8X2Nsu2ud25ar6VfTgxGo628wUjSqea6iXdPsQR",
   "solana_usdc": 0,
   "spendable_usdc_total": 0,
-  "owner_seed_bsc_usdc": 5.0,
-  "owner_seed_bsc_bnb": 0.0,
   "owner_seed_is_revenue": false,
   "owner_seed_authorized_for_earning": true,
   "spending_limit": "earned balance plus owner-authorized 5 USDC seed only for verified earning routes",
@@ -16,6 +14,8 @@
   "cashout_base_address": "0xd9a437b5599d5bd625327e0dea9988dfc0c6d5b0",
   "bitrefill_enabled": true,
   "x402_enabled": true,
+  "owner_seed_bsc_usdc": 5.0,
+  "owner_seed_bsc_bnb": 0.0,
   "owner_seed_initial_usdc": 5.0,
   "owner_seed_is_earnings": false,
   "owner_seed_tx": "0xdec729d0948ad6eda51f0d5e8bc62f1218c8e7efb2cb4ef772d335ce6cd38c72",
@@ -23,5 +23,7 @@
   "owner_seed_token_contract": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
   "owner_seed_usable_for_base_bounties": false,
   "owner_seed_needs_base_move": true,
-  "owner_seed_source_gas_available": false
+  "owner_seed_source_gas_available": false,
+  "base_funds_available_for_bounties": false,
+  "owner_seed_balance_verified_at": "2026-09-14T16:22:59.128625Z"
 }
