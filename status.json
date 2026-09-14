@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-14T05:35:00.000Z",
+  "ts": "2026-09-14T07:01:16.002Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51276338,
-    "toBlock": 51280192
+    "fromBlock": 51280193,
+    "toBlock": 51289952
   },
   "baseObservedTotal": 0,
   "recentBaseReceipts": [],
@@ -32,22 +32,22 @@
     "merged": 0,
     "prs": [
       {
-        "repo": "awesome-x402",
-        "num": 1515,
-        "title": "Add Penniless Data Utilities listing",
-        "state": "open",
-        "url": "https://github.com/xpaysh/awesome-x402/pull/1515",
-        "merged": false,
-        "updatedAt": "2026-09-14T00:26:42Z"
-      },
-      {
         "repo": "directory",
         "num": 13,
         "title": "Add Penniless Data Utilities listing",
         "state": "open",
         "url": "https://github.com/paidmcp/directory/pull/13",
         "merged": false,
-        "updatedAt": "2026-09-14T00:26:26Z"
+        "updatedAt": "2026-09-14T02:24:21Z"
+      },
+      {
+        "repo": "awesome-x402",
+        "num": 1515,
+        "title": "Add Penniless Data Utilities listing",
+        "state": "open",
+        "url": "https://github.com/xpaysh/awesome-x402/pull/1515",
+        "merged": false,
+        "updatedAt": "2026-09-14T02:23:43Z"
       },
       {
         "repo": "distribb-skill",
@@ -60,26 +60,5 @@
       }
     ]
   },
-  "newListings": [
-    "frantic:bounty:130"
-  ],
-  "facilitator_stats": {
-    "url": "https://penniless-json-repair.sjaman.workers.dev/stats",
-    "total_requests": 141,
-    "paid_attempts": 105,
-    "settled_success": 0,
-    "note": "x402 facilitator operational with PayAI, 0 USDC received per block scan"
-  },
-  "verified_payment_evidence": {
-    "frantic_bounty_130": {
-      "receipt_id": "hfr_94c178ead2d29313d7378f6b2c71afd8",
-      "rail": "x402",
-      "amount_settled": 3300,
-      "worker_liability": 3000,
-      "price_per_slot": 300,
-      "slots_available": 10,
-      "claim_url": "https://gofrantic.com/bounties/130",
-      "settled_at": "2026-08-27T08:57:04.205Z"
-    }
-  }
+  "newListings": []
 }
