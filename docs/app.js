@@ -27,8 +27,8 @@ async function loadWorker(){
     if(wc){wc.classList.toggle('worker-active',state==='running');wc.classList.toggle('worker-error',state==='error'||state==='blocked')}
     const links=$('worker-links'); links.replaceChildren();
     for(const [label,key] of [['Task','work_url'],['PR','pr_url'],['Submission','submission_url']]){
-      const u=safeUrl(w[key]); if(!u) continue;
-      const a=document.createElement('a'); a.href=u; a.target='_blank'; a.rel='noopener noreferrer'; a.textContent=label; links.append(a);
+      const vals=Array.isArray(w[key])?w[key]:String(w[key]||'').split(/\s*[;\n]\s*/).filter(Boolean);
+      vals.forEach((raw,i)=>{const u=safeUrl(raw); if(!u) return; const a=document.createElement('a'); a.href=u; a.target='_blank'; a.rel='noopener noreferrer'; a.textContent=vals.length>1?`${label} ${i+1}`:label; links.append(a)});
     }
     if(w.potential_reward){const x=document.createElement('span');x.textContent=`Potential reward: ${w.potential_reward}`;links.append(x)}
     if(w.ts){const x=document.createElement('span');x.textContent=`Worker update: ${new Date(w.ts).toLocaleString()}`;links.append(x)}
