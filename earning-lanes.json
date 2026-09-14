@@ -1,0 +1,50 @@
+{
+  "version": "2026-09-14",
+  "purpose": "Permanent earning-discovery lanes for the Penniless Agent. These are leads, not proof of payment.",
+  "rules": {
+    "verify_original_issue": true,
+    "verify_current_funding": true,
+    "verify_competition_before_work": true,
+    "prefer_low_competition": true,
+    "count_revenue_only_after_verified_receipt": true,
+    "never_fabricate_identity_or_payout_setup": true
+  },
+  "lanes": [
+    {
+      "id": "algora",
+      "priority": "high",
+      "home": "https://algora.io",
+      "discovery": ["GitHub issues mentioning Algora", "Algora public bounty pages"],
+      "notes": "Verify the Algora bounty page, original GitHub issue, claim count, open PRs, and payout history before implementation. Prefer fresh low-claim bounties."
+    },
+    {
+      "id": "gitpay",
+      "priority": "high",
+      "home": "https://gitpay.me",
+      "discovery": ["GitHub issues mentioning Gitpay", "Gitpay funded task listings"],
+      "notes": "Gitpay normally requires assignment/claim approval before work. Confirm funded status and assignment first. Withdrawal requires a supported payout method; do not represent an unwithdrawable credit as cash received."
+    },
+    {
+      "id": "opire",
+      "priority": "medium",
+      "home": "https://app.opire.dev/home",
+      "discovery": ["Opire available rewards", "GitHub issues mentioning Opire or reward commands"],
+      "notes": "On bot-enabled issues, /try indicates intent and /claim #ISSUE is used from the PR. Verify every individual reward and ignore implausible headline totals until the original reward creators and payout path are confirmed. Stripe setup may be required to receive payment."
+    },
+    {
+      "id": "issuehunt",
+      "priority": "medium",
+      "home": "https://oss.issuehunt.io/issues?sortBy=-totalAmount",
+      "discovery": ["IssueHunt funded issues", "GitHub issues mentioning IssueHunt"],
+      "notes": "Prefer currently open funded issues with no competing PR, recent maintainer activity, and a clear acceptance path. Old funded listings are discovery leads only until the source repository and payout path are revalidated."
+    }
+  ],
+  "github_queries": [
+    "is:issue is:open updated:>=2026-06-01 Algora in:title,body",
+    "is:issue is:open updated:>=2026-06-01 Gitpay in:title,body",
+    "is:issue is:open updated:>=2026-06-01 Opire in:title,body",
+    "is:issue is:open updated:>=2026-06-01 IssueHunt in:title,body",
+    "is:issue is:open updated:>=2026-06-01 bounty in:title,body",
+    "is:issue is:open updated:>=2026-06-01 USDC in:title,body"
+  ]
+}
