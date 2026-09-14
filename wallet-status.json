@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-14T15:27:56.307050Z",
+  "ts": "2026-09-14T15:29:01.463705Z",
   "spending_enabled": true,
   "provider": "AgentCash",
   "base_address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37",
@@ -11,5 +11,13 @@
   "external_budget_eur": 0,
   "cashout_base_address": "0xd9a437b5599d5bd625327e0dea9988dfc0c6d5b0",
   "bitrefill_enabled": true,
-  "x402_enabled": true
+  "x402_enabled": true,
+  "owner_seed_initial_usdc": 5.0,
+  "owner_seed_is_earnings": false,
+  "owner_seed_tx": "0xdec729d0948ad6eda51f0d5e8bc62f1218c8e7efb2cb4ef772d335ce6cd38c72",
+  "owner_seed_chain": "bsc",
+  "owner_seed_token_contract": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+  "owner_seed_bsc_usdc": 5.0,
+  "owner_seed_bsc_bnb": 0.0,
+  "owner_seed_usable_for_base_bounties": false
 }
