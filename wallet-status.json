@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-14T16:52:21.053972Z",
+  "ts": "2026-09-14T16:53:35.174632Z",
   "spending_enabled": true,
   "provider": "AgentCash",
   "base_address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37",
@@ -24,6 +24,6 @@
   "owner_seed_usable_for_base_bounties": false,
   "owner_seed_needs_base_move": true,
   "owner_seed_source_gas_available": false,
-  "owner_seed_balance_verified_at": "2026-09-14T16:52:21.596302Z",
+  "owner_seed_balance_verified_at": "2026-09-14T16:53:35.682273Z",
   "base_funds_available_for_bounties": false
 }
