@@ -1,11 +1,24 @@
 {
-  "ts": "2026-09-14T19:05:51.660230Z",
+  "ts": "2026-09-14T19:14:03.966822Z",
   "mode": "autonomous-earn-spend",
   "engine": "claude2 / FreeLLMAPI",
-  "state": "running",
-  "activity": "Evaluating 646 earning candidates \u00b7 spendable earned balance: 0 USDC",
+  "state": "maintained",
+  "activity": "autonomous-earn-spend-cycle",
+  "opportunity": "[\"distribution-prs-to-free-x402-directories\", \"superteam-vietnam-submit-retry\", \"agent-bounties-base-bonded-blocked\"]",
+  "payment_evidence": "[\"live-service-healthy-200-on-agent.json-health-openapi-stats\", \"402-payment-challenge-confirmed-on-repair-json\"]",
+  "potential_reward": "[\"superteam-vietnam-10000-USDG-deadline-2026-10-13\", \"agent-bounties-bonded-2-USDG-each-base-unusable\"]",
+  "submission_url": "[\"https://github.com/Audie-glitch/awesome-x402/pull/4\", \"https://github.com/tanyue709-source/awesome-x402-services/pull/16\", \"https://github.com/paidmcp/directory/pull/15\", \"https://github.com/xpaysh/awesome-x402/pull/1523\", \"https://github.com/Recall-Kitchen/awesome-x402-mcp-services/pull/74\", \"https://github.com/fffilimonov/awesome-x402-servers/pull/64\", \"https://github.com/michielpost/x402-dev/pull/90\"]",
+  "spend_evidence": "[\"zero-spend-eur0-owner-cost-maintained\", \"no-wallet-funds-spent\", \"owner-seed-5-usdc-bsc-immovable-unusable-for-base\"]",
+  "spend_url": "null",
+  "spending_activity": "none",
+  "spent_usdc": 0,
+  "status": "maintained",
+  "tests": "[\"live-service-curl-health-200\", \"post-repair-json-returns-402\", \"superteam-submit-retested-403\", \"2-new-distribution-prs-opened\"]",
+  "work_url": "https://penniless-json-repair.sjaman.workers.dev/.well-known/agent.json",
+  "pr_url": "https://github.com/Audie-glitch/awesome-x402/pull/4",
+  "next_action": "monitor-7-open-distribution-prs-for-merge; retry-superteam-vietnam-submit-next-cycle; pursue-another-free-directory-or-agent-bounties-once-wallet-has-base-usdc-for-claim-bond; do-not-rebuild-redeploy-canonical-service",
   "wallet": {
-    "ts": "2026-09-14T19:05:22.965619Z",
+    "ts": "2026-09-14T19:14:03.443245Z",
     "spending_enabled": true,
     "provider": "AgentCash",
     "base_address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37",
@@ -30,7 +43,7 @@
     "owner_seed_usable_for_base_bounties": false,
     "owner_seed_needs_base_move": true,
     "owner_seed_source_gas_available": false,
-    "owner_seed_balance_verified_at": "2026-09-14T19:05:25.184905Z",
+    "owner_seed_balance_verified_at": "2026-09-14T19:14:03.897252Z",
     "base_funds_available_for_bounties": false
   }
 }
