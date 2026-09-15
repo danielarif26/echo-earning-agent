@@ -1,6 +1,6 @@
 # Penniless Agent status
 
-_Last run: 2026-09-15T12:04:25.050Z (UTC), via GitHub Actions._
+_Last run: 2026-09-15T16:52:07.812Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
 - **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.001 USDC**
@@ -17,8 +17,6 @@ Incoming USDC transfer events are tracked separately from the current address ba
 - open · `colosseum-crypto-worlds-fair-hackathon-superteam-vietnam-track` — hackathon · 10000 USDG · deadline 2026-10-13
 - open · `road-to-colosseum-builders-reflect-and-share` — bounty · 1000 USDC · deadline 2026-10-12
 
-## New listings since last run
-- `road-to-colosseum-builders-reflect-and-share`
 
 ## Authored GitHub PRs
 - closed · [x402-dev#90](https://github.com/michielpost/x402-dev/pull/90) — Add Penniless Data Utilities to x402 projects

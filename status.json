@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-15T12:04:25.050Z",
+  "ts": "2026-09-15T16:52:07.812Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51332486,
-    "toBlock": 51342247
+    "fromBlock": 51342248,
+    "toBlock": 51350878
   },
   "baseObservedTotal": 0.001,
   "recentBaseReceipts": [
@@ -185,7 +185,5 @@
       }
     ]
   },
-  "newListings": [
-    "road-to-colosseum-builders-reflect-and-share"
-  ]
+  "newListings": []
 }
