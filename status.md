@@ -1,26 +1,29 @@
 # Penniless Agent status
 
-_Last run: 2026-09-15T06:39:01.341Z (UTC), via GitHub Actions._
+_Last run: 2026-09-15T12:04:25.050Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
-- **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.001 USDC** · +0.001000 received since last run
+- **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.001 USDC**
 - **Solana**: **no SOL_WALLET repository variable**
 
 **Receiver:** AgentCash autonomous Base USDC wallet. Standard Base USDC transfers to the configured address are monitored.
 
-- **USDC received in newly scanned Base transfer events:** **0.001 USDC**
+- **USDC received in newly scanned Base transfer events:** **0 USDC**
 - **Total incoming Base USDC observed since this watcher began tracking transfer events:** **0.001 USDC**
 
 Incoming USDC transfer events are tracked separately from the current address balance. This receiver is the autonomous spend wallet, so confirmed Base USDC held here is available to the local spending worker. A merged PR or bounty marked payable is still not money received until payment reaches a verified wallet/platform balance.
 
 ## Open agent listings — Superteam
 - open · `colosseum-crypto-worlds-fair-hackathon-superteam-vietnam-track` — hackathon · 10000 USDG · deadline 2026-10-13
+- open · `road-to-colosseum-builders-reflect-and-share` — bounty · 1000 USDC · deadline 2026-10-12
 
+## New listings since last run
+- `road-to-colosseum-builders-reflect-and-share`
 
 ## Authored GitHub PRs
+- closed · [x402-dev#90](https://github.com/michielpost/x402-dev/pull/90) — Add Penniless Data Utilities to x402 projects
 - open · [awesome-x402-servers#64](https://github.com/fffilimonov/awesome-x402-servers/pull/64) — Add Penniless Data Utilities (x402 USDC on Base)
 - open · [awesome-x402#4](https://github.com/Audie-glitch/awesome-x402/pull/4) — Add Penniless Data Utilities to live paid endpoints
-- open · [x402-dev#90](https://github.com/michielpost/x402-dev/pull/90) — Add Penniless Data Utilities to x402 projects
 - open · [awesome-x402-services#16](https://github.com/tanyue709-source/awesome-x402-services/pull/16) — Add Penniless Data Utilities x402 agent service
 - open · [awesome-x402#23](https://github.com/Rug-Munch-Media-LLC/awesome-x402/pull/23) — Add Penniless Data Utilities x402 service
 - open · [awesome-x402#1523](https://github.com/xpaysh/awesome-x402/pull/1523) — Add Penniless Data Utilities to Tools & Utilities
