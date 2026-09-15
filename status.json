@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-15T16:52:07.812Z",
+  "ts": "2026-09-15T20:11:41.921Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51342248,
-    "toBlock": 51350878
+    "fromBlock": 51350879,
+    "toBlock": 51356865
   },
   "baseObservedTotal": 0.001,
   "recentBaseReceipts": [
@@ -58,6 +58,42 @@
     "merged": 3,
     "prs": [
       {
+        "repo": "directory",
+        "num": 15,
+        "title": "feat: add Penniless Data Utilities to paid directory",
+        "state": "open",
+        "url": "https://github.com/paidmcp/directory/pull/15",
+        "merged": false,
+        "updatedAt": "2026-09-15T19:48:10Z"
+      },
+      {
+        "repo": "awesome-x402",
+        "num": 1523,
+        "title": "Add Penniless Data Utilities to Tools & Utilities",
+        "state": "open",
+        "url": "https://github.com/xpaysh/awesome-x402/pull/1523",
+        "merged": false,
+        "updatedAt": "2026-09-15T19:48:09Z"
+      },
+      {
+        "repo": "awesome-x402-servers",
+        "num": 64,
+        "title": "Add Penniless Data Utilities (x402 USDC on Base)",
+        "state": "open",
+        "url": "https://github.com/fffilimonov/awesome-x402-servers/pull/64",
+        "merged": false,
+        "updatedAt": "2026-09-15T19:48:08Z"
+      },
+      {
+        "repo": "awesome-x402-services",
+        "num": 16,
+        "title": "Add Penniless Data Utilities x402 agent service",
+        "state": "open",
+        "url": "https://github.com/tanyue709-source/awesome-x402-services/pull/16",
+        "merged": false,
+        "updatedAt": "2026-09-15T19:48:07Z"
+      },
+      {
         "repo": "x402-dev",
         "num": 90,
         "title": "Add Penniless Data Utilities to x402 projects",
@@ -67,31 +103,13 @@
         "updatedAt": "2026-09-15T09:02:16Z"
       },
       {
-        "repo": "awesome-x402-servers",
-        "num": 64,
-        "title": "Add Penniless Data Utilities (x402 USDC on Base)",
-        "state": "open",
-        "url": "https://github.com/fffilimonov/awesome-x402-servers/pull/64",
-        "merged": false,
-        "updatedAt": "2026-09-15T00:30:43Z"
-      },
-      {
         "repo": "awesome-x402",
         "num": 4,
         "title": "Add Penniless Data Utilities to live paid endpoints",
         "state": "open",
         "url": "https://github.com/Audie-glitch/awesome-x402/pull/4",
         "merged": false,
-        "updatedAt": "2026-09-15T00:30:42Z"
-      },
-      {
-        "repo": "awesome-x402-services",
-        "num": 16,
-        "title": "Add Penniless Data Utilities x402 agent service",
-        "state": "open",
-        "url": "https://github.com/tanyue709-source/awesome-x402-services/pull/16",
-        "merged": false,
-        "updatedAt": "2026-09-15T00:30:41Z"
+        "updatedAt": "2026-09-15T19:48:08Z"
       },
       {
         "repo": "awesome-x402",
@@ -101,24 +119,6 @@
         "url": "https://github.com/Rug-Munch-Media-LLC/awesome-x402/pull/23",
         "merged": false,
         "updatedAt": "2026-09-15T00:30:40Z"
-      },
-      {
-        "repo": "awesome-x402",
-        "num": 1523,
-        "title": "Add Penniless Data Utilities to Tools & Utilities",
-        "state": "open",
-        "url": "https://github.com/xpaysh/awesome-x402/pull/1523",
-        "merged": false,
-        "updatedAt": "2026-09-15T00:30:39Z"
-      },
-      {
-        "repo": "directory",
-        "num": 15,
-        "title": "feat: add Penniless Data Utilities to paid directory",
-        "state": "open",
-        "url": "https://github.com/paidmcp/directory/pull/15",
-        "merged": false,
-        "updatedAt": "2026-09-15T00:30:38Z"
       },
       {
         "repo": "awesome-x402-mcp-services",
