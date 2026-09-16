@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-16T01:21:55.824Z",
+  "ts": "2026-09-16T06:41:16.995Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -10,13 +10,30 @@
     "amount": 0.001
   },
   "baseTransfers": {
-    "amount": 0,
-    "events": [],
-    "fromBlock": 51361689,
-    "toBlock": 51366172
+    "amount": 0.001,
+    "events": [
+      {
+        "tx": "0xe4ad285407cf69e47464b6cce242b1e4df4496eeadfbce0714f157d9bf09df29",
+        "logIndex": 177,
+        "block": 51369541,
+        "amount": 0.001,
+        "tokenFrom": "0x3d98800c64c345950e1eaaa076d88c12d1bf5f37",
+        "tokenFromType": "EOA"
+      }
+    ],
+    "fromBlock": 51366173,
+    "toBlock": 51375753
   },
-  "baseObservedTotal": 0.001,
+  "baseObservedTotal": 0.002,
   "recentBaseReceipts": [
+    {
+      "tx": "0xe4ad285407cf69e47464b6cce242b1e4df4496eeadfbce0714f157d9bf09df29",
+      "logIndex": 177,
+      "block": 51369541,
+      "amount": 0.001,
+      "tokenFrom": "0x3d98800c64c345950e1eaaa076d88c12d1bf5f37",
+      "tokenFromType": "EOA"
+    },
     {
       "tx": "0xbff203a40f07890dbebc221e697ca01c3e8869ff3a4adaac2733a3daad391e30",
       "logIndex": 418,
@@ -54,9 +71,27 @@
     ]
   },
   "github": {
-    "total": 14,
+    "total": 16,
     "merged": 3,
     "prs": [
+      {
+        "repo": "claude-builders-bounty",
+        "num": 4272,
+        "title": "feat(hooks): token-aware PreToolUse blocker for destructive bash (#3)",
+        "state": "open",
+        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4272",
+        "merged": false,
+        "updatedAt": "2026-09-16T01:57:09Z"
+      },
+      {
+        "repo": "claude-builders-bounty",
+        "num": 4270,
+        "title": "feat(skill): generate-changelog from git history (closes #1)",
+        "state": "open",
+        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4270",
+        "merged": false,
+        "updatedAt": "2026-09-16T01:52:55Z"
+      },
       {
         "repo": "directory",
         "num": 15,
