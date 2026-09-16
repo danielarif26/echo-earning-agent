@@ -1,1 +1,0 @@
-USDC TRANSFER OBSERVED (2026-09-16T06:41:16.995Z): +0.001000 Base USDC transfer observed · available to autonomous spend wallet after confirmation
