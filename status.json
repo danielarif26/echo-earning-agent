@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-16T16:46:41.309Z",
+  "ts": "2026-09-16T20:03:25.116Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51385379,
-    "toBlock": 51393915
+    "fromBlock": 51393916,
+    "toBlock": 51399817
   },
   "baseObservedTotal": 0.002,
   "recentBaseReceipts": [
@@ -68,11 +68,11 @@
       {
         "repo": "penniless-data-utilities",
         "num": 2,
-        "title": "Accept x402 v1 payments and stop counting crawlers as buyers",
+        "title": "Accept x402 v1 payments, and put the tool where people can use it",
         "state": "open",
         "url": "https://github.com/danielarif26/penniless-data-utilities/pull/2",
         "merged": false,
-        "updatedAt": "2026-09-16T16:19:47Z"
+        "updatedAt": "2026-09-16T18:34:36Z"
       },
       {
         "repo": "claude-builders-bounty",
