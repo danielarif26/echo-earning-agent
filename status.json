@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-16T12:02:07.814Z",
+  "ts": "2026-09-16T16:46:41.309Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51375754,
-    "toBlock": 51385378
+    "fromBlock": 51385379,
+    "toBlock": 51393915
   },
   "baseObservedTotal": 0.002,
   "recentBaseReceipts": [
@@ -62,9 +62,27 @@
     ]
   },
   "github": {
-    "total": 16,
+    "total": 18,
     "merged": 3,
     "prs": [
+      {
+        "repo": "penniless-data-utilities",
+        "num": 2,
+        "title": "Accept x402 v1 payments and stop counting crawlers as buyers",
+        "state": "open",
+        "url": "https://github.com/danielarif26/penniless-data-utilities/pull/2",
+        "merged": false,
+        "updatedAt": "2026-09-16T16:19:47Z"
+      },
+      {
+        "repo": "claude-builders-bounty",
+        "num": 1,
+        "title": "SKILL: Generate a CHANGELOG from git history (bounty #1)",
+        "state": "open",
+        "url": "https://github.com/danielarif26/claude-builders-bounty/pull/1",
+        "merged": false,
+        "updatedAt": "2026-09-16T13:13:31Z"
+      },
       {
         "repo": "claude-builders-bounty",
         "num": 4272,
