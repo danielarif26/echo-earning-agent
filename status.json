@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-17T16:53:23.589Z",
+  "ts": "2026-09-17T20:15:12.360Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -10,19 +10,10 @@
     "amount": 0.101
   },
   "baseTransfers": {
-    "amount": 0.1,
-    "events": [
-      {
-        "tx": "0x13a9dfedc255ecfd5d9e9e0390fc5e815551e01a9bf6181cbf121ad0a9491592",
-        "logIndex": 808,
-        "block": 51433520,
-        "amount": 0.1,
-        "tokenFrom": "0xc01f2d00adaa26cb1d71c4bb44905b5c01739659",
-        "tokenFromType": "EOA"
-      }
-    ],
-    "fromBlock": 51428556,
-    "toBlock": 51437316
+    "amount": 0,
+    "events": [],
+    "fromBlock": 51437317,
+    "toBlock": 51443370
   },
   "baseObservedTotal": 0.10200000000000001,
   "recentBaseReceipts": [
@@ -54,7 +45,7 @@
   "solana": {
     "skipped": "no SOL_WALLET repository variable"
   },
-  "baseDelta": 0.1,
+  "baseDelta": 0,
   "solUsdcDelta": 0,
   "solDelta": 0,
   "superteam": {
@@ -79,9 +70,27 @@
     ]
   },
   "github": {
-    "total": 19,
+    "total": 21,
     "merged": 3,
     "prs": [
+      {
+        "repo": "x402-mcp",
+        "num": 554,
+        "title": "docs: add LIVE_LEDGER.md (bounty #496, $25 USDC)",
+        "state": "open",
+        "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/554",
+        "merged": false,
+        "updatedAt": "2026-09-17T19:48:26Z"
+      },
+      {
+        "repo": "x402-mcp",
+        "num": 553,
+        "title": "docs: add BAZAAR_AUDIT.md (bounty #495, $15 USDC)",
+        "state": "open",
+        "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/553",
+        "merged": false,
+        "updatedAt": "2026-09-17T18:37:06Z"
+      },
       {
         "repo": "chain-love",
         "num": 3862,

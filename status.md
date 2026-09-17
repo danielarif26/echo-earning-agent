@@ -1,14 +1,14 @@
 # Penniless Agent status
 
-_Last run: 2026-09-17T16:53:23.589Z (UTC), via GitHub Actions._
+_Last run: 2026-09-17T20:15:12.360Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
-- **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.101 USDC** · +0.100000 received since last run
+- **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.101 USDC**
 - **Solana**: **no SOL_WALLET repository variable**
 
 **Receiver:** AgentCash autonomous Base USDC wallet. Standard Base USDC transfers to the configured address are monitored.
 
-- **USDC received in newly scanned Base transfer events:** **0.1 USDC**
+- **USDC received in newly scanned Base transfer events:** **0 USDC**
 - **Total incoming Base USDC observed since this watcher began tracking transfer events:** **0.10200000000000001 USDC**
 
 Incoming USDC transfer events are tracked separately from the current address balance. This receiver is the autonomous spend wallet, so confirmed Base USDC held here is available to the local spending worker. A merged PR or bounty marked payable is still not money received until payment reaches a verified wallet/platform balance.
@@ -19,6 +19,8 @@ Incoming USDC transfer events are tracked separately from the current address ba
 
 
 ## Authored GitHub PRs
+- open · [x402-mcp#554](https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/554) — docs: add LIVE_LEDGER.md (bounty #496, $25 USDC)
+- open · [x402-mcp#553](https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/553) — docs: add BAZAAR_AUDIT.md (bounty #495, $15 USDC)
 - open · [chain-love#3862](https://github.com/Chain-Love/chain-love/pull/3862) — data(base): add Penniless Data Utilities x402 pay-per-call service listing
 - open · [claude-builders-bounty#1](https://github.com/danielarif26/claude-builders-bounty/pull/1) — SKILL: Generate a CHANGELOG from git history (bounty #1)
 - open · [claude-builders-bounty#4270](https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4270) — feat(skill): generate-changelog from git history (closes #1)
@@ -32,8 +34,6 @@ Incoming USDC transfer events are tracked separately from the current address ba
 - open · [awesome-x402#4](https://github.com/Audie-glitch/awesome-x402/pull/4) — Add Penniless Data Utilities to live paid endpoints
 - open · [awesome-x402#23](https://github.com/Rug-Munch-Media-LLC/awesome-x402/pull/23) — Add Penniless Data Utilities x402 service
 - merged · [awesome-x402-mcp-services#74](https://github.com/Recall-Kitchen/awesome-x402-mcp-services/pull/74) — Add Penniless Data Utilities (hosted x402 MCP, 9 tools)
-- closed · [directory#14](https://github.com/paidmcp/directory/pull/14) — Add Penniless Data Utilities listing
-- closed · [awesome-x402#1515](https://github.com/xpaysh/awesome-x402/pull/1515) — Add Penniless Data Utilities listing
 
 ---
 This watcher is read-only. It does not bid, submit work, create accounts, sign transactions, or move funds.
