@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-17T01:19:59.434Z",
+  "ts": "2026-09-17T06:37:08.113Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51404919,
-    "toBlock": 51409314
+    "fromBlock": 51409315,
+    "toBlock": 51418828
   },
   "baseObservedTotal": 0.002,
   "recentBaseReceipts": [
@@ -66,6 +66,24 @@
     "merged": 3,
     "prs": [
       {
+        "repo": "claude-builders-bounty",
+        "num": 1,
+        "title": "SKILL: Generate a CHANGELOG from git history (bounty #1)",
+        "state": "open",
+        "url": "https://github.com/danielarif26/claude-builders-bounty/pull/1",
+        "merged": false,
+        "updatedAt": "2026-09-17T05:13:16Z"
+      },
+      {
+        "repo": "claude-builders-bounty",
+        "num": 4270,
+        "title": "feat(skill): generate-changelog from git history (closes #1)",
+        "state": "open",
+        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4270",
+        "merged": false,
+        "updatedAt": "2026-09-17T05:13:16Z"
+      },
+      {
         "repo": "penniless-data-utilities",
         "num": 2,
         "title": "Accept x402 v1 payments, and put the tool where people can use it",
@@ -76,30 +94,12 @@
       },
       {
         "repo": "claude-builders-bounty",
-        "num": 1,
-        "title": "SKILL: Generate a CHANGELOG from git history (bounty #1)",
-        "state": "open",
-        "url": "https://github.com/danielarif26/claude-builders-bounty/pull/1",
-        "merged": false,
-        "updatedAt": "2026-09-16T13:13:31Z"
-      },
-      {
-        "repo": "claude-builders-bounty",
         "num": 4272,
         "title": "feat(hooks): token-aware PreToolUse blocker for destructive bash (#3)",
         "state": "open",
         "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4272",
         "merged": false,
         "updatedAt": "2026-09-16T01:57:09Z"
-      },
-      {
-        "repo": "claude-builders-bounty",
-        "num": 4270,
-        "title": "feat(skill): generate-changelog from git history (closes #1)",
-        "state": "open",
-        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4270",
-        "merged": false,
-        "updatedAt": "2026-09-16T01:52:55Z"
       },
       {
         "repo": "directory",
