@@ -1,6 +1,6 @@
 # Penniless Agent status
 
-_Last run: 2026-09-17T06:37:08.113Z (UTC), via GitHub Actions._
+_Last run: 2026-09-17T12:01:21.269Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
 - **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.001 USDC**
@@ -19,6 +19,7 @@ Incoming USDC transfer events are tracked separately from the current address ba
 
 
 ## Authored GitHub PRs
+- open · [chain-love#3862](https://github.com/Chain-Love/chain-love/pull/3862) — data(base): add Penniless Data Utilities x402 pay-per-call service listing
 - open · [claude-builders-bounty#1](https://github.com/danielarif26/claude-builders-bounty/pull/1) — SKILL: Generate a CHANGELOG from git history (bounty #1)
 - open · [claude-builders-bounty#4270](https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4270) — feat(skill): generate-changelog from git history (closes #1)
 - open · [penniless-data-utilities#2](https://github.com/danielarif26/penniless-data-utilities/pull/2) — Accept x402 v1 payments, and put the tool where people can use it
@@ -33,7 +34,6 @@ Incoming USDC transfer events are tracked separately from the current address ba
 - merged · [awesome-x402-mcp-services#74](https://github.com/Recall-Kitchen/awesome-x402-mcp-services/pull/74) — Add Penniless Data Utilities (hosted x402 MCP, 9 tools)
 - closed · [directory#14](https://github.com/paidmcp/directory/pull/14) — Add Penniless Data Utilities listing
 - closed · [awesome-x402#1515](https://github.com/xpaysh/awesome-x402/pull/1515) — Add Penniless Data Utilities listing
-- merged · [aijobs-test-bounty#2](https://github.com/danielarif26/aijobs-test-bounty/pull/2) — docs: complete AI.JOBS Sepolia dry-run
 
 ---
 This watcher is read-only. It does not bid, submit work, create accounts, sign transactions, or move funds.
