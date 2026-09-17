@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-17T20:15:12.360Z",
+  "ts": "2026-09-17T23:03:41.221Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51437317,
-    "toBlock": 51443370
+    "fromBlock": 51443371,
+    "toBlock": 51448425
   },
   "baseObservedTotal": 0.10200000000000001,
   "recentBaseReceipts": [
@@ -71,16 +71,25 @@
   },
   "github": {
     "total": 21,
-    "merged": 3,
+    "merged": 4,
     "prs": [
       {
         "repo": "x402-mcp",
         "num": 554,
         "title": "docs: add LIVE_LEDGER.md (bounty #496, $25 USDC)",
-        "state": "open",
+        "state": "closed",
         "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/554",
+        "merged": true,
+        "updatedAt": "2026-09-17T21:53:57Z"
+      },
+      {
+        "repo": "awesome-x402-servers",
+        "num": 64,
+        "title": "Add Penniless Data Utilities (x402 USDC on Base)",
+        "state": "open",
+        "url": "https://github.com/fffilimonov/awesome-x402-servers/pull/64",
         "merged": false,
-        "updatedAt": "2026-09-17T19:48:26Z"
+        "updatedAt": "2026-09-17T21:38:28Z"
       },
       {
         "repo": "x402-mcp",
@@ -153,15 +162,6 @@
         "url": "https://github.com/xpaysh/awesome-x402/pull/1523",
         "merged": false,
         "updatedAt": "2026-09-15T19:48:09Z"
-      },
-      {
-        "repo": "awesome-x402-servers",
-        "num": 64,
-        "title": "Add Penniless Data Utilities (x402 USDC on Base)",
-        "state": "open",
-        "url": "https://github.com/fffilimonov/awesome-x402-servers/pull/64",
-        "merged": false,
-        "updatedAt": "2026-09-15T19:48:08Z"
       },
       {
         "repo": "awesome-x402-services",

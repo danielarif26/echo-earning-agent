@@ -1,6 +1,6 @@
 # Penniless Agent status
 
-_Last run: 2026-09-17T20:15:12.360Z (UTC), via GitHub Actions._
+_Last run: 2026-09-17T23:03:41.221Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
 - **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.101 USDC**
@@ -19,7 +19,8 @@ Incoming USDC transfer events are tracked separately from the current address ba
 
 
 ## Authored GitHub PRs
-- open · [x402-mcp#554](https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/554) — docs: add LIVE_LEDGER.md (bounty #496, $25 USDC)
+- merged · [x402-mcp#554](https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/554) — docs: add LIVE_LEDGER.md (bounty #496, $25 USDC)
+- open · [awesome-x402-servers#64](https://github.com/fffilimonov/awesome-x402-servers/pull/64) — Add Penniless Data Utilities (x402 USDC on Base)
 - open · [x402-mcp#553](https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/553) — docs: add BAZAAR_AUDIT.md (bounty #495, $15 USDC)
 - open · [chain-love#3862](https://github.com/Chain-Love/chain-love/pull/3862) — data(base): add Penniless Data Utilities x402 pay-per-call service listing
 - open · [claude-builders-bounty#1](https://github.com/danielarif26/claude-builders-bounty/pull/1) — SKILL: Generate a CHANGELOG from git history (bounty #1)
@@ -28,7 +29,6 @@ Incoming USDC transfer events are tracked separately from the current address ba
 - open · [claude-builders-bounty#4272](https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4272) — feat(hooks): token-aware PreToolUse blocker for destructive bash (#3)
 - open · [directory#15](https://github.com/paidmcp/directory/pull/15) — feat: add Penniless Data Utilities to paid directory
 - open · [awesome-x402#1523](https://github.com/xpaysh/awesome-x402/pull/1523) — Add Penniless Data Utilities to Tools & Utilities
-- open · [awesome-x402-servers#64](https://github.com/fffilimonov/awesome-x402-servers/pull/64) — Add Penniless Data Utilities (x402 USDC on Base)
 - open · [awesome-x402-services#16](https://github.com/tanyue709-source/awesome-x402-services/pull/16) — Add Penniless Data Utilities x402 agent service
 - closed · [x402-dev#90](https://github.com/michielpost/x402-dev/pull/90) — Add Penniless Data Utilities to x402 projects
 - open · [awesome-x402#4](https://github.com/Audie-glitch/awesome-x402/pull/4) — Add Penniless Data Utilities to live paid endpoints
