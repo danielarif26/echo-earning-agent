@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-17T23:03:41.221Z",
+  "ts": "2026-09-18T01:14:33.152Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -7,13 +7,13 @@
     "address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37"
   },
   "base": {
-    "amount": 0.101
+    "amount": 0.091
   },
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51443371,
-    "toBlock": 51448425
+    "fromBlock": 51448426,
+    "toBlock": 51452351
   },
   "baseObservedTotal": 0.10200000000000001,
   "recentBaseReceipts": [
@@ -45,7 +45,7 @@
   "solana": {
     "skipped": "no SOL_WALLET repository variable"
   },
-  "baseDelta": 0,
+  "baseDelta": -0.010000000000000009,
   "solUsdcDelta": 0,
   "solDelta": 0,
   "superteam": {
