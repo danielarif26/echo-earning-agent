@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-18T11:45:27.665Z",
+  "ts": "2026-09-18T16:19:54.391Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51462000,
-    "toBlock": 51471278
+    "fromBlock": 51471279,
+    "toBlock": 51479511
   },
   "baseObservedTotal": 0.10200000000000001,
   "recentBaseReceipts": [
@@ -74,6 +74,15 @@
     "merged": 4,
     "prs": [
       {
+        "repo": "x402-mcp",
+        "num": 553,
+        "title": "docs: add BAZAAR_AUDIT.md (bounty #495, $15 USDC)",
+        "state": "open",
+        "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/553",
+        "merged": false,
+        "updatedAt": "2026-09-18T13:12:08Z"
+      },
+      {
         "repo": "claude-builders-bounty",
         "num": 4270,
         "title": "feat(skill): generate-changelog from git history (closes #1)",
@@ -117,15 +126,6 @@
         "url": "https://github.com/fffilimonov/awesome-x402-servers/pull/64",
         "merged": false,
         "updatedAt": "2026-09-17T21:38:28Z"
-      },
-      {
-        "repo": "x402-mcp",
-        "num": 553,
-        "title": "docs: add BAZAAR_AUDIT.md (bounty #495, $15 USDC)",
-        "state": "open",
-        "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/553",
-        "merged": false,
-        "updatedAt": "2026-09-17T18:37:06Z"
       },
       {
         "repo": "chain-love",
