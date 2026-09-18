@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-18T01:14:33.152Z",
+  "ts": "2026-09-18T06:36:10.355Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51448426,
-    "toBlock": 51452351
+    "fromBlock": 51452352,
+    "toBlock": 51461999
   },
   "baseObservedTotal": 0.10200000000000001,
   "recentBaseReceipts": [
@@ -45,7 +45,7 @@
   "solana": {
     "skipped": "no SOL_WALLET repository variable"
   },
-  "baseDelta": -0.010000000000000009,
+  "baseDelta": 0,
   "solUsdcDelta": 0,
   "solDelta": 0,
   "superteam": {
@@ -70,9 +70,36 @@
     ]
   },
   "github": {
-    "total": 21,
+    "total": 22,
     "merged": 4,
     "prs": [
+      {
+        "repo": "penniless-data-utilities",
+        "num": 3,
+        "title": "docs: refresh README to match live x402 v2 production behavior",
+        "state": "open",
+        "url": "https://github.com/danielarif26/penniless-data-utilities/pull/3",
+        "merged": false,
+        "updatedAt": "2026-09-18T04:15:14Z"
+      },
+      {
+        "repo": "claude-builders-bounty",
+        "num": 1,
+        "title": "SKILL: Generate a CHANGELOG from git history (bounty #1)",
+        "state": "open",
+        "url": "https://github.com/danielarif26/claude-builders-bounty/pull/1",
+        "merged": false,
+        "updatedAt": "2026-09-18T01:17:01Z"
+      },
+      {
+        "repo": "claude-builders-bounty",
+        "num": 4270,
+        "title": "feat(skill): generate-changelog from git history (closes #1)",
+        "state": "open",
+        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4270",
+        "merged": false,
+        "updatedAt": "2026-09-18T01:17:01Z"
+      },
       {
         "repo": "x402-mcp",
         "num": 554,
@@ -108,24 +135,6 @@
         "url": "https://github.com/Chain-Love/chain-love/pull/3862",
         "merged": false,
         "updatedAt": "2026-09-17T11:55:45Z"
-      },
-      {
-        "repo": "claude-builders-bounty",
-        "num": 1,
-        "title": "SKILL: Generate a CHANGELOG from git history (bounty #1)",
-        "state": "open",
-        "url": "https://github.com/danielarif26/claude-builders-bounty/pull/1",
-        "merged": false,
-        "updatedAt": "2026-09-17T05:13:16Z"
-      },
-      {
-        "repo": "claude-builders-bounty",
-        "num": 4270,
-        "title": "feat(skill): generate-changelog from git history (closes #1)",
-        "state": "open",
-        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/pull/4270",
-        "merged": false,
-        "updatedAt": "2026-09-17T13:43:02Z"
       },
       {
         "repo": "penniless-data-utilities",
