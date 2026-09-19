@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-19T17:57:48.873Z",
+  "ts": "2026-09-19T20:33:43.693Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51519870,
-    "toBlock": 51525649
+    "fromBlock": 51525650,
+    "toBlock": 51530326
   },
   "baseObservedTotal": 0.10200000000000001,
   "recentBaseReceipts": [
@@ -70,9 +70,18 @@
     ]
   },
   "github": {
-    "total": 22,
+    "total": 23,
     "merged": 4,
     "prs": [
+      {
+        "repo": "x402-mcp",
+        "num": 562,
+        "title": "docs: add BAZAAR_AUDIT.md (bounty #495 —  USDC)",
+        "state": "open",
+        "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/562",
+        "merged": false,
+        "updatedAt": "2026-09-19T20:25:18Z"
+      },
       {
         "repo": "x402-mcp",
         "num": 554,
