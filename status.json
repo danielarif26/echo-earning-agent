@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-19T06:33:40.689Z",
+  "ts": "2026-09-19T11:28:50.626Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51496100,
-    "toBlock": 51505125
+    "fromBlock": 51505126,
+    "toBlock": 51513980
   },
   "baseObservedTotal": 0.10200000000000001,
   "recentBaseReceipts": [
@@ -75,12 +75,21 @@
     "prs": [
       {
         "repo": "x402-mcp",
+        "num": 554,
+        "title": "docs: add LIVE_LEDGER.md (bounty #496, $25 USDC)",
+        "state": "closed",
+        "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/554",
+        "merged": true,
+        "updatedAt": "2026-09-19T10:14:09Z"
+      },
+      {
+        "repo": "x402-mcp",
         "num": 553,
         "title": "docs: add BAZAAR_AUDIT.md (bounty #495, $15 USDC)",
         "state": "open",
         "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/553",
         "merged": false,
-        "updatedAt": "2026-09-19T06:06:22Z"
+        "updatedAt": "2026-09-19T08:27:43Z"
       },
       {
         "repo": "claude-builders-bounty",
@@ -108,15 +117,6 @@
         "url": "https://github.com/danielarif26/claude-builders-bounty/pull/1",
         "merged": false,
         "updatedAt": "2026-09-18T01:17:01Z"
-      },
-      {
-        "repo": "x402-mcp",
-        "num": 554,
-        "title": "docs: add LIVE_LEDGER.md (bounty #496, $25 USDC)",
-        "state": "closed",
-        "url": "https://github.com/kwizzlesurp10-ctrl/x402-mcp/pull/554",
-        "merged": true,
-        "updatedAt": "2026-09-17T21:53:57Z"
       },
       {
         "repo": "awesome-x402-servers",
