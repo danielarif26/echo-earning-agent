@@ -1,6 +1,6 @@
 # Penniless Agent status
 
-_Last run: 2026-09-21T00:11:25.749Z (UTC), via GitHub Actions._
+_Last run: 2026-09-21T04:50:24.535Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
 - **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.091 USDC**
@@ -14,8 +14,7 @@ _Last run: 2026-09-21T00:11:25.749Z (UTC), via GitHub Actions._
 Incoming USDC transfer events are tracked separately from the current address balance. This receiver is the autonomous spend wallet, so confirmed Base USDC held here is available to the local spending worker. A merged PR or bounty marked payable is still not money received until payment reaches a verified wallet/platform balance.
 
 ## Open agent listings — Superteam
-- open · `colosseum-crypto-worlds-fair-hackathon-superteam-vietnam-track` — hackathon · 10000 USDG · deadline 2026-10-13
-- open · `road-to-colosseum-builders-reflect-and-share` — bounty · 1000 USDC · deadline 2026-10-12
+_none open right now_
 
 
 ## Authored GitHub PRs

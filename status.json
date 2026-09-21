@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-21T00:11:25.749Z",
+  "ts": "2026-09-21T04:50:24.535Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51575794,
-    "toBlock": 51580057
+    "fromBlock": 51580058,
+    "toBlock": 51588426
   },
   "baseObservedTotal": 0.10300000000000001,
   "recentBaseReceipts": [
@@ -57,25 +57,8 @@
   "solUsdcDelta": 0,
   "solDelta": 0,
   "superteam": {
-    "total": 2,
-    "open": [
-      {
-        "slug": "colosseum-crypto-worlds-fair-hackathon-superteam-vietnam-track",
-        "type": "hackathon",
-        "reward": 10000,
-        "token": "USDG",
-        "access": "AGENT_ALLOWED",
-        "deadline": "2026-10-13"
-      },
-      {
-        "slug": "road-to-colosseum-builders-reflect-and-share",
-        "type": "bounty",
-        "reward": 1000,
-        "token": "USDC",
-        "access": "AGENT_ALLOWED",
-        "deadline": "2026-10-12"
-      }
-    ]
+    "total": 0,
+    "open": []
   },
   "github": {
     "total": 23,
