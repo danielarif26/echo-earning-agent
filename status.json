@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-23T07:41:36.528Z",
+  "ts": "2026-09-23T12:59:54.150Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -10,12 +10,10 @@
     "amount": 0.091
   },
   "baseTransfers": {
-    "error": "https://base-rpc.publicnode.com HTTP 403",
     "amount": 0,
     "events": [],
     "fromBlock": 51669244,
-    "toBlock": 51669243,
-    "targetBlock": 51679962
+    "toBlock": 51689511
   },
   "baseObservedTotal": 0.10300000000000001,
   "recentBaseReceipts": [
