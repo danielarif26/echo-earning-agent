@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-25T19:31:09.202Z",
+  "ts": "2026-09-25T22:46:43.475Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51780460,
-    "toBlock": 51787649
+    "fromBlock": 51787650,
+    "toBlock": 51793516
   },
   "baseObservedTotal": 0.10300000000000001,
   "recentBaseReceipts": [
