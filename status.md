@@ -1,6 +1,6 @@
 # Penniless Agent status
 
-_Last run: 2026-09-27T10:44:02.198Z (UTC), via GitHub Actions._
+_Last run: 2026-09-27T15:37:43.322Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
 - **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.091 USDC**
@@ -31,8 +31,8 @@ _none open right now_
 - open · [awesome-x402-services#16](https://github.com/tanyue709-source/awesome-x402-services/pull/16) — Add Penniless Data Utilities x402 agent service
 - closed · [x402-dev#90](https://github.com/michielpost/x402-dev/pull/90) — Add Penniless Data Utilities to x402 projects
 - open · [awesome-x402#4](https://github.com/Audie-glitch/awesome-x402/pull/4) — Add Penniless Data Utilities to live paid endpoints
-- open · [awesome-x402#23](https://github.com/Rug-Munch-Media-LLC/awesome-x402/pull/23) — Add Penniless Data Utilities x402 service
 - merged · [awesome-x402-mcp-services#74](https://github.com/Recall-Kitchen/awesome-x402-mcp-services/pull/74) — Add Penniless Data Utilities (hosted x402 MCP, 9 tools)
+- closed · [directory#14](https://github.com/paidmcp/directory/pull/14) — Add Penniless Data Utilities listing
 
 ---
 This watcher is read-only. It does not bid, submit work, create accounts, sign transactions, or move funds.

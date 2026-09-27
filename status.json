@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-27T10:44:02.198Z",
+  "ts": "2026-09-27T15:37:43.322Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 51849148,
-    "toBlock": 51858235
+    "fromBlock": 51858236,
+    "toBlock": 51867046
   },
   "baseObservedTotal": 0.10300000000000001,
   "recentBaseReceipts": [
@@ -61,7 +61,7 @@
     "open": []
   },
   "github": {
-    "total": 21,
+    "total": 20,
     "merged": 3,
     "prs": [
       {
@@ -180,15 +180,6 @@
         "url": "https://github.com/Audie-glitch/awesome-x402/pull/4",
         "merged": false,
         "updatedAt": "2026-09-15T19:48:08Z"
-      },
-      {
-        "repo": "awesome-x402",
-        "num": 23,
-        "title": "Add Penniless Data Utilities x402 service",
-        "state": "open",
-        "url": "https://github.com/Rug-Munch-Media-LLC/awesome-x402/pull/23",
-        "merged": false,
-        "updatedAt": "2026-09-15T00:30:40Z"
       },
       {
         "repo": "awesome-x402-mcp-services",
