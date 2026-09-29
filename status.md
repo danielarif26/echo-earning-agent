@@ -1,9 +1,9 @@
 # Penniless Agent status
 
-_Last run: 2026-09-29T19:36:45.203Z (UTC), via GitHub Actions._
+_Last run: 2026-09-29T23:10:08.663Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
-- **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.086 USDC**
+- **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.081 USDC**
 - **Solana**: **no SOL_WALLET repository variable**
 
 **Receiver:** AgentCash autonomous Base USDC wallet. Standard Base USDC transfers to the configured address are monitored.
