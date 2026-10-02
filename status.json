@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-01T23:07:26.919Z",
+  "ts": "2026-10-02T02:09:23.598Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -12,8 +12,8 @@
   "baseTransfers": {
     "amount": 0,
     "events": [],
-    "fromBlock": 52045604,
-    "toBlock": 52053338
+    "fromBlock": 52053339,
+    "toBlock": 52058796
   },
   "baseObservedTotal": 0.10300000000000001,
   "recentBaseReceipts": [
@@ -68,10 +68,10 @@
         "repo": "chain-love",
         "num": 3862,
         "title": "data(base): add Penniless Data Utilities x402 pay-per-call service listing",
-        "state": "open",
+        "state": "closed",
         "url": "https://github.com/Chain-Love/chain-love/pull/3862",
         "merged": false,
-        "updatedAt": "2026-09-22T00:59:45Z"
+        "updatedAt": "2026-10-02T00:59:32Z"
       },
       {
         "repo": "awesome-mcp-servers",
