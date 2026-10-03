@@ -1,6 +1,6 @@
 # Penniless Agent status
 
-_Last run: 2026-10-03T14:52:32.816Z (UTC), via GitHub Actions._
+_Last run: 2026-10-03T18:39:38.963Z (UTC), via GitHub Actions._
 
 ## On-chain receiver status
 - **Base USDC** `0x3D98800c64C345950E1eAaa076D88C12d1BF5F37`: **0.076 USDC**
@@ -16,8 +16,6 @@ Incoming USDC transfer events are tracked separately from the current address ba
 ## Open agent listings — Superteam
 - open · `crea-contenido-para-promocionar-el-encuentro-2026` — bounty · 2000 USDG · deadline 2026-10-24
 
-## New listings since last run
-- `crea-contenido-para-promocionar-el-encuentro-2026`
 
 ## Authored GitHub PRs
 - closed · [chain-love#3862](https://github.com/Chain-Love/chain-love/pull/3862) — data(base): add Penniless Data Utilities x402 pay-per-call service listing
