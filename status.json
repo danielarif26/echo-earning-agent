@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-06T14:26:30.148Z",
+  "ts": "2026-10-06T19:48:46.902Z",
   "receiver": {
     "label": "AgentCash autonomous Base USDC wallet",
     "network": "Base",
@@ -7,7 +7,7 @@
     "address": "0x3D98800c64C345950E1eAaa076D88C12d1BF5F37"
   },
   "base": {
-    "amount": 0.076
+    "amount": 0.071
   },
   "baseTransfers": {
     "error": "https://base-rpc.publicnode.com HTTP 403",
@@ -15,7 +15,7 @@
     "events": [],
     "fromBlock": 52201762,
     "toBlock": 52201761,
-    "targetBlock": 52253709
+    "targetBlock": 52263378
   },
   "baseObservedTotal": 0.10300000000000001,
   "recentBaseReceipts": [
@@ -55,7 +55,7 @@
   "solana": {
     "skipped": "no SOL_WALLET repository variable"
   },
-  "baseDelta": 0,
+  "baseDelta": -0.0050000000000000044,
   "solUsdcDelta": 0,
   "solDelta": 0,
   "superteam": {
